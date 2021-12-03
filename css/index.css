@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+#title{
+ font-size: 24px;
+ margin-left: 40px;
+ font-weight: bold;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.main{
+  padding: 10px;
+  height: 80vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+}
+.main .box1, .main .box2, .main .box3,.main .box4{
+  padding: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 230px;
+  width: 330px;
+  font-family: monospace;
+  border-radius:5px;
+  box-shadow: 0px 0px 5px -7px rgba(194,190,190,1);
+-webkit-box-shadow: 0px 0px 5px -7px rgba(194,190,190,1);
+-moz-box-shadow: 0px 0px 5px -7px rgba(194,190,190,1);
+}
+.main .box1{
+   background-color: blanchedalmond;
+}
+.main .box1 .body span, .main .box2 .body span, .main .box3 .body span, .main .box4 .body span{
+  font-size: 50px;
+ letter-spacing: 3px;
+ font-family: 'Karla', sans-serif;
+}
+.main .box1 .body h6, .main .box2 .body h6, .main .box3 .body h6, .main .box4 .body h6{
+  font-weight: bolder;
+}
+.main .box1 .body p, .main .box2 .body p, .main .box3 .body p, .main .box4 .body p{
+  margin-top: -11px;
+  font-family:monospace;
+}
+.main .box1 .footer div,.main .box2 .footer div, .main .box3 .footer div, .main .box4 .footer div{
+  margin-top: -10px;
+  padding: 5px;
+  padding-left: 8px;
+  height: 38px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(230, 217, 217);
+  border-radius: 50%;
+}
+.main .box1 .footer div i, .main .box2 .footer div i, .main .box3 .footer div i, .main .box4 .footer div i{
+ font-size: 20px;
+}
+
+.main .box1  div i{
+  font-size: 22px;
+  cursor: pointer;
+}
+.main .box1  div i:hover{
+ opacity: 0.7;
+}
+.main .box2{
+   background-color:burlywood;
+}
+.main .box2  div i{
+  font-size: 22px;
+  cursor: pointer;
+}
+.main .box2  div i:hover{
+ opacity: 0.7;
+}
+.main .box3{
+   background-color: khaki;
+}
+.main .box3  div i{
+  font-size: 22px;
+  cursor: pointer;
+}
+.main .box3  div i:hover{
+ opacity: 0.7;
+}
+.main .box4{
+   background-color:lightpink ;
+}
+.main .box4  div i{
+  font-size: 22px;
+  cursor: pointer;
+}
+.main .box4  div i:hover{
+ opacity: 0.7;
+}
