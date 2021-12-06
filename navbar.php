@@ -1,13 +1,13 @@
 <div id="mySidenav" class="sidenav">
  <div id="avatar" class="mt-4 mb-2">
-  <img />
+  <img src="./img/avatar.png" height="100%" width="100%" onclick="redirectHomepage()" />
  </div>
  <span>Parbat Lama</span>
  <hr />
  <a href="javascript:void(0)" class="closebtn bg-white" onclick="closeNav()">&times;</a>
- <a href="#"> <i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
- <a href="#"> <i class="fa fa-users" aria-hidden="true"></i> Members</a>
- <a href="#"> <i class="fa fa-book" aria-hidden="true"></i> Books</a>
+ <a href="index.php"> <i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
+ <a href="members.php"> <i class="fa fa-users" aria-hidden="true"></i> Members</a>
+ <a href="books.php"> <i class="fa fa-book" aria-hidden="true"></i> Books</a>
  <a href="#"> <i class="fa fa-rocket" aria-hidden="true"></i> Issued</a>
  <a href="#"> <i class="fa fa-undo" aria-hidden="true"></i> Returned</a>
  <a href="#"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Not Returned</a>
@@ -18,13 +18,16 @@
 <div id="navbar">
  <div id="rightNav">
   <i onclick="openNav()" class="fa fa-bars" aria-hidden="true"></i>
-  <img src="./img/logo.png" />
+  <img src="./img/logo.png" onclick="redirectHomepage()" />
  </div>
  <div id="leftNav">
-  <i class="fa fa-plus" aria-hidden="true"></i>
-  <i class="fa fa-th" aria-hidden="true"></i>
+  <i class="fa fa-plus" data-bs-toggle="tooltip" data-bs-placement="top" title="Add a new book" onclick="createBook()"></i>
+  <img src="./img/paint.png" height="28px" width="28px" data-bs-toggle="tooltip" data-bs-placement="top" title="Change BG color" aria-hidden="true" onclick="changeBackground()"></i>
   <div id="avatar">
-   <img />
+   <img src="./img/avatar.png" height="100%" width="100%" onclick="showProfile_nav()" />
   </div>
  </div>
 </div>
+
+<!-- profile navigation items -->
+<?php include 'profile_nav.php'; ?>

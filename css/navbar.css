@@ -23,6 +23,10 @@
  border-radius: 50%;
  background-color: blue;
  cursor: pointer;
+ overflow:hidden;
+}
+.sidenav #avatar img{
+  transform: scale(0.8);
 }
 .sidenav span{
   margin-left: 55px;
@@ -37,13 +41,14 @@
   font-size: 18px;
   color: rgb(19, 18, 18);
   display: block;
-  transition: 0.3s;
+    transition: 0.2s ease-in-out;
   /* background-color: rebeccapurple;
   border: 1px solid white; */
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
+  padding-left: 50px;
   color: black;
   background-color: rgb(231, 231, 231);
 }
@@ -72,7 +77,7 @@
 }
 #navbar #rightNav i{
   font-size: 20px;
-  color: rgb(80, 80, 80);
+  /* color: rgb(80, 80, 80); */
   cursor: pointer;
 }
 #navbar #rightNav i:hover{
@@ -96,11 +101,17 @@
 }
 #navbar #leftNav i{
  font-size: 20px;
- color: rgb(80, 80, 80);
+ /* color: rgb(80, 80, 80); */
  cursor: pointer;
 }
 #navbar #leftNav i:hover{
  opacity: 0.8;
+}
+#navbar #leftNav img{
+ cursor: pointer;
+}
+#navbar #leftNav img:hover{
+ opacity: 0.7;
 }
 
 #navbar #leftNav #avatar{
@@ -109,9 +120,13 @@
  border-radius: 50%;
  background-color: blue;
  cursor: pointer;
+ overflow-x: hidden;
 }
 #navbar #leftNav #avatar:hover{
  opacity: 0.8;
+}
+#navbar #leftNav #avatar img{
+ transform: scale(0.8);
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

@@ -1,0 +1,30 @@
+.createCourse{
+  top: 65px;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-family: monospace;
+  z-index: 4444;
+}
+
+.createCourse .formDiv{
+  height: 600px;
+  width: 400px;
+  display: flex;
+  flex-direction: block;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
+-webkit-box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
+-moz-box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
+}
+.createCourse .formDiv form #description{
+  width: 300px;
+}
+.createCourse .formDiv form input, .createCourse .formDiv form #category,.createCourse .formDiv form #img{
+  width: 300px;
+}

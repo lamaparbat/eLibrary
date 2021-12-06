@@ -1,5 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 
+.profile_nav{
+  top: 60px;
+  height: 93vh;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 444;
+  background-color: rgb(248, 248, 248);
+}
+.profile_nav .row .content{
+  padding: 40px;
+  height: 500px;
+  width: 350px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
+-webkit-box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
+-moz-box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
+}
+.profile_nav .row .content .row1{
+  display: flex;
+  justify-content: center;
+}
+.profile_nav .row .content .row1 #avatar{
+ height: 90px;
+ width: 90px;
+ border-radius: 50%;
+ background-color: blue;
+ cursor: pointer;
+ overflow-x: hidden;
+}
+.profile_nav .row .content .row1 #avatar:hover{
+ opacity: 0.8;
+}
+.profile_nav .row .content .row1 #avatar img{
+ transform: scale(0.8);
+}
+.profile_nav #email{
+  font-family:'Courier New', Courier, monospace;
+}
+.profile_nav .row .content #setting_btn{
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  border:0.1px solid rgb(212, 212, 212);
+}
+.profile_nav .row .content #setting_btn:hover{
+  opacity: 0.7;
+}
+.profile_nav .row .content #logout_btn{
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  border:0.1px solid rgb(212, 212, 212);
+}
+.profile_nav .row .content #logout_btn:hover{
+  opacity: 0.7;
+}
+.profile_nav .row .content .copyright{
+  margin-top: 90px;
+  text-align: center;
+}
+.profile_nav .row .content .copyright span{
+  padding: 5px;
+  font-size: 13px;
+  color: rgb(116, 116, 116);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1.2px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.profile_nav .row .content .copyright span:hover{
+background-color: rgb(148, 144, 143);
+}
+
 #title{
  font-size: 24px;
  margin-left: 40px;
@@ -22,10 +98,14 @@
   height: 230px;
   width: 330px;
   font-family: monospace;
+  border:0.1px solid rgb(202, 202, 202);
   border-radius:5px;
-  box-shadow: 0px 0px 5px -7px rgba(194,190,190,1);
--webkit-box-shadow: 0px 0px 5px -7px rgba(194,190,190,1);
--moz-box-shadow: 0px 0px 5px -7px rgba(194,190,190,1);
+  cursor: pointer;
+}
+.main .box1:hover, .main .box2:hover, .main .box3:hover,.main .box4:hover{
+  box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
+-webkit-box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
+-moz-box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
 }
 .main .box1{
    background-color: blanchedalmond;
