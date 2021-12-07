@@ -3,10 +3,11 @@
  width: 100%;
  font-family: monospace;
 }
-.members .sidebar{
+.members .row .sidebar{
  margin-top: 40px;
  margin-bottom: 30px;
  height: fit-content;
+
  box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 -webkit-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 -moz-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
@@ -18,7 +19,7 @@
   height: fit-content;
   display: flex;
   align-items: center;
-  border: 0.5px solid rgb(122, 122, 122);
+  border: 0.5px solid rgb(212, 212, 212);
 }
 .members .sidebar form div .icon_cont{
   height: fit-content;
@@ -53,7 +54,7 @@
 .members .row .data .box{
   height:300px;
   width: 270px;
-  background-color: white;
+  background-color: whitesmoke;
 box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 -webkit-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 -moz-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);

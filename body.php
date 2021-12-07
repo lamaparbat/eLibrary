@@ -139,6 +139,3 @@
    </div>
   </div>
  </div>
-
- <!-- create course -->
- <?php include 'createCourse.php'; ?>

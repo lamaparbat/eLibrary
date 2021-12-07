@@ -9,19 +9,23 @@
  <link rel="stylesheet" href="./css/navbar.css">
  <link rel="stylesheet" href="./css/books.css">
  <link rel="stylesheet" href="./css/index.css">
+ <link rel="stylesheet" href="./css/createCourse.css">
  <title>Library Management System/Members</title>
 </head>
 
 <body>
  <!-- header -->
  <?php include 'navbar.php'; ?>
+ <?php include 'profile_nav.php'; ?>
 
  <!-- body -->
+ <!-- create course -->
+ <?php include 'createCourse.php'; ?>
  <div class="container members">
   <div class="row">
 
    <!-- sidebar navigation -->
-   <div class="col-sm-4 p-5 sidebar">
+   <div class="col-sm-4 p-5 sidebar bg-light text-dark">
     <h5 id="title">Insert a new Book</h5>
     <hr class="mt-1" />
     <form class="pt-0" method="post" enctype="multipart/form-data">
@@ -58,12 +62,12 @@
    </div>
 
    <!-- scrollable member list -->
-   <div class="col-sm-8 px-3 data bg- d-flex">
+   <div class="col-sm-8 px-3 data bg- d-flex text-dark">
 
     <div class="box pb-2 mx-1 my-2">
      <br />
      <div class="bookImg">
-      <img src="https://img1.hotstarext.com/image/upload/f_auto,t_hcdl/sources/r1/cms/prod/old_images/MOVIE/333/1770000333/1770000333-h" class="img-fluid" id="memberImg" />
+      <img src="https://img1.hotstarext.com/image/upload/f_auto,t_hcdl/sources/r1/cms/prod/old_images/MOVIE/333/1770000333/1770000333-h" loading="lazy" class="img-fluid" id="memberImg" />
      </div>
      <div class="body">
       <h5 class="mx-3 my-2"><b>The fault in our stars</b></h5>
@@ -80,7 +84,7 @@
     <div class="box pb-2 mx-1 my-2">
      <br />
      <div class="bookImg">
-      <img src=" https://img.wattpad.com/cover/34887092-512-k223341.jpg" class="img-fluid" id="memberImg" />
+      <img src=" https://img.wattpad.com/cover/34887092-512-k223341.jpg" class="img-fluid" id="memberImg" loading="lazy" />
      </div>
      <div class="body">
       <h5 class="mx-3 my-2"><b>Captured Heart</b></h5>
@@ -114,7 +118,7 @@
     <div class="box pb-2 mx-1 my-2">
      <br />
      <div class="bookImg">
-      <img src="https://morningsidemaryland.com/wp-content/uploads/2021/09/YouTube-17.jpg" class="img-fluid" id="memberImg" />
+      <img src="https://morningsidemaryland.com/wp-content/uploads/2021/09/YouTube-17.jpg" loading="lazy" class="img-fluid" id="memberImg" />
      </div>
      <div class="body">
       <h5 class="mx-3 my-2"><b>Spiderman - No way home</b></h5>
@@ -148,7 +152,7 @@
     <div class="box pb-2 mx-1 my-2">
      <br />
      <div class="bookImg">
-      <img src="https://phantom-marca.unidadeditorial.es/8256e68fdfac5b6a6c792af7308d27e8/crop/0x0/1597x899/resize/1320/f/jpg/assets/multimedia/imagenes/2021/10/01/16330974723192.png" class="img-fluid" id="memberImg" />
+      <img src="https://phantom-marca.unidadeditorial.es/8256e68fdfac5b6a6c792af7308d27e8/crop/0x0/1597x899/resize/1320/f/jpg/assets/multimedia/imagenes/2021/10/01/16330974723192.png" loading="lazy" class="img-fluid" id="memberImg" />
      </div>
      <div class="body">
       <h5 class="mx-3 my-2"><b>Squid Game</b></h5>
@@ -165,7 +169,7 @@
     <div class="box pb-2 mx-1 my-2">
      <br />
      <div class="bookImg">
-      <img src="https://cdn.datafloq.com/cache/blog_pictures/2021/05/07/878x531/data-science-books.jpg" class="img-fluid" id="memberImg" />
+      <img src="https://cdn.datafloq.com/cache/blog_pictures/2021/05/07/878x531/data-science-books.jpg" loading="lazy" class="img-fluid" id="memberImg" />
      </div>
      <div class="body">
       <h5 class="mx-3 my-2"><b>Data Science</b></h5>

@@ -13,13 +13,18 @@
 </head>
 
 <body>
- <!-- header -->
+ <!-- *******  header ****** -->
  <?php include 'navbar.php'; ?>
+ <!-- profile navigation items -->
+ <?php include 'profile_nav.php'; ?>
 
- <!-- body -->
+ <!-- ****** body  ****** -->
  <?php include 'body.php'; ?>
 
- <!-- footer -->
+ <!-- create course -->
+ <?php include 'createCourse.php'; ?>
+
+ <!-- ****** footer ****** -->
 
 
  <!-- bootstrap mdn -->

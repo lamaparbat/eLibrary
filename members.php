@@ -9,19 +9,24 @@
  <link rel="stylesheet" href="./css/navbar.css">
  <link rel="stylesheet" href="./css/members.css">
  <link rel="stylesheet" href="./css/index.css">
+ <link rel="stylesheet" href="./css/createCourse.css">
  <title>Library Management System/Members</title>
 </head>
 
 <body>
  <!-- header -->
  <?php include 'navbar.php'; ?>
+ <?php include 'profile_nav.php'; ?>
 
  <!-- body -->
+ <!-- create course -->
+ <?php include 'createCourse.php'; ?>
+
  <div class="container members">
   <div class="row">
 
    <!-- sidebar navigation -->
-   <div class="col-sm-4 p-5 sidebar">
+   <div class="col-sm-4 p-5 sidebar bg-light text-dark">
     <h5 id="title">Create a new Member</h5>
     <hr class="mt-1" />
     <form class="pt-0" method="post" enctype="multipart/form-data">
@@ -58,7 +63,7 @@
    </div>
 
    <!-- scrollable member list -->
-   <div class="col-sm-8 px-3 data bg- d-flex">
+   <div class="col-sm-8 px-3 data bg- d-flex text-dark">
 
     <div class="box py-3 px-2 mx-1 my-2">
      <br />

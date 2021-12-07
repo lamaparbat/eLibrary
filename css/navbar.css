@@ -39,11 +39,8 @@
   padding: 15px 8px 15px 32px;
   text-decoration: none;
   font-size: 18px;
-  color: rgb(19, 18, 18);
   display: block;
-    transition: 0.2s ease-in-out;
-  /* background-color: rebeccapurple;
-  border: 1px solid white; */
+  transition: 0.2s ease-in-out;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -73,11 +70,9 @@
 }
 #navbar #rightNav{
  display: flex;
- /* background-color: rebeccapurple; */
 }
 #navbar #rightNav i{
   font-size: 20px;
-  /* color: rgb(80, 80, 80); */
   cursor: pointer;
 }
 #navbar #rightNav i:hover{
@@ -89,7 +84,7 @@
  height: 120px;
  width: 130px;
  position: absolute;
- /* border: 1px solid blue; */
+ cursor: pointer;
 }
 
 #navbar #leftNav{
@@ -97,11 +92,9 @@
  display: flex;
  align-items: center;
  justify-content: space-around;
- /* background-color: red; */
 }
 #navbar #leftNav i{
  font-size: 20px;
- /* color: rgb(80, 80, 80); */
  cursor: pointer;
 }
 #navbar #leftNav i:hover{
@@ -127,8 +120,8 @@
 }
 #navbar #leftNav #avatar img{
  transform: scale(0.8);
+ cursor: pointer;
 }
-
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
