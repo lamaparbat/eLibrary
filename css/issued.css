@@ -60,7 +60,7 @@ box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 -moz-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 }
 .members .row .data .box .body{
-  height: 130px;
+  height: 133px;
   overflow-y: hidden;
 }
 .members .row .data .box .footer{
@@ -74,6 +74,10 @@ box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
   overflow:hidden;
 }
 .members .row .data .box span #value{
+  padding-top: 1px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
   font-size: 14px;
 }
 .members .row .data .box .footer .edit_cont{

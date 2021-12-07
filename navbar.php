@@ -8,10 +8,10 @@
  <a href="index.php"> <i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
  <a href="members.php"> <i class="fa fa-users" aria-hidden="true"></i> Members</a>
  <a href="books.php"> <i class="fa fa-book" aria-hidden="true"></i> Books</a>
- <a href="#"> <i class="fa fa-rocket" aria-hidden="true"></i> Issued</a>
- <a href="#"> <i class="fa fa-undo" aria-hidden="true"></i> Returned</a>
- <a href="#"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Not Returned</a>
- <a href="#"> <i class="fa fa-cogs" aria-hidden="true"></i> Setting</a>
+ <a href="issued.php"> <i class="fa fa-rocket" aria-hidden="true"></i> Issued</a>
+ <a href="returned.php"> <i class="fa fa-undo" aria-hidden="true"></i> Returned</a>
+ <a href="delay.php"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Not Returned</a>
+ <a href="setting.php"> <i class="fa fa-cogs" aria-hidden="true"></i> Setting</a>
 </div>
 
 <!-- Use any element to open the sidenav -->

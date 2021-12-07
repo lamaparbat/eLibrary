@@ -1,0 +1,31 @@
+.searchNav{
+ width: 58%;
+ position: fixed;
+ background-color: red;
+ box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
+-webkit-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
+-moz-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
+}
+.searchNav #searchbar{
+  padding: 10px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+}
+
+.searchNav #searchbar div{
+ background-color: white;
+ display: flex;
+ align-items: center;
+}
+.searchNav #searchbar div i{
+  font-size: 18px;
+}
+.searchNav #searchbar div input{
+  padding-left: 25px;
+  width: 350px;
+  border-color: white;
+  border-left: 1px solid rgb(221, 221, 221);
+}
