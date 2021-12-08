@@ -16,9 +16,11 @@
 <body>
  <!-- *******  header ****** -->
  <?php include 'navbar.php'; ?>
+
  <!-- profile navigation items -->
  <?php include 'profile_nav.php'; ?>
 
+<br/><br/><br/>
  <!-- ****** body  ****** -->
  <?php include 'body.php'; ?>
 

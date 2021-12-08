@@ -20,10 +20,9 @@
  <?php include 'profile_nav.php'; ?>
 
  <!-- body -->
-
  <!-- create course -->
  <?php include 'createCourse.php'; ?>
-
+ <br/>
  <div class="container members mt-5">
   <div class="row">
 
@@ -200,6 +199,7 @@
 
 
  <!-- bootstrap mdn -->
+ <script src="./js/index.js"></script>
  <script src="./js/navbar.js"></script>
  <script src="./js/createCourse.js"></script>
  <script src="https://use.fontawesome.com/8af7dff76b.js"></script>

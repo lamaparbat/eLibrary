@@ -1,22 +1,22 @@
 .searchNav{
  width: 58%;
  position: fixed;
- background-color: red;
  box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 -webkit-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 -moz-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 }
 .searchNav #searchbar{
   padding: 10px;
+  padding-left: 5px;
   padding-left: 20px;
   display: flex;
   justify-content: start;
   align-items: center;
-  background-color: rgb(240, 240, 240);
+  background-color:white;
 }
 
 .searchNav #searchbar div{
- background-color: white;
+ background-color: whitesmoke;
  display: flex;
  align-items: center;
 }
@@ -24,8 +24,21 @@
   font-size: 18px;
 }
 .searchNav #searchbar div input{
+  width: 100%;
   padding-left: 25px;
-  width: 350px;
+  color: red;
   border-color: white;
   border-left: 1px solid rgb(221, 221, 221);
+}
+
+@media(max-width:1100px){
+.searchNav{
+ width: 90%;
+}
+.searchNav #searchbar div input{
+ padding-left: 10px;
+}
+.searchNav #searchbar #memberCount{
+ display: none;
+}
 }

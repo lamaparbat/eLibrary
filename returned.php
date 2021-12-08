@@ -22,6 +22,7 @@
  <!-- body -->
  <!-- create course -->
  <?php include 'createCourse.php'; ?>
+ <br />
  <div class="container members mt-5">
   <div class="row">
 

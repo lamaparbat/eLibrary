@@ -24,6 +24,9 @@
   height: fit-content;
   border-color:white;
 }
+.members .sidebar form div .icon_cont i{
+ color:rgb(87, 30, 30)smoke;
+}
 .members .sidebar form div .icon_cont #userIcon,.members .sidebar form div .icon_cont #passwordIcon {
   font-size: 25px;
 }
@@ -47,6 +50,7 @@
  padding-bottom: 50px;
 }
 .members .row .data .boxCont{
+ justify-content: center;
  flex-flow: wrap;
 }
 .members .row .data::-webkit-scrollbar{
@@ -55,7 +59,7 @@
 .members .row .data .box{
   height:300px;
   width: 270px;
-  background-color: whitesmoke;
+  background-color: white;
 box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 -webkit-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 -moz-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
@@ -83,6 +87,9 @@ box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 
 /* responsive view */
 @media(max-width:1100px){
+.members{
+ overflow-y: visible;
+}
 .members .sidebar{
  width: 100%;
  box-shadow: none;

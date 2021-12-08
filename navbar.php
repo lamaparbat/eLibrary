@@ -4,7 +4,7 @@
  </div>
  <span>Admin Panel</span>
  <hr />
- <a href="javascript:void(0)" class="closebtn bg-white" onclick="closeNav()">&times;</a>
+ <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
  <a href="index.php"> <i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
  <a href="members.php"> <i class="fa fa-users" aria-hidden="true"></i> Members</a>
  <a href="books.php"> <i class="fa fa-book" aria-hidden="true"></i> Books</a>
@@ -15,7 +15,7 @@
 </div>
 
 <!-- Use any element to open the sidenav -->
-<div id="navbar">
+<div class="fixed-top" id="navbar">
  <div id="rightNav">
   <i onclick="openNav()" class="fa fa-bars" aria-hidden="true"></i>
   <img src="./img/logo.png" onclick="redirectHomepage()" />

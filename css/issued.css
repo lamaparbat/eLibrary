@@ -18,11 +18,14 @@
   height: fit-content;
   display: flex;
   align-items: center;
-  border: 0.5px solid rgb(122, 122, 122);
+  border: 0.5px solid rgb(160, 160, 160);
 }
 .members .sidebar form div .icon_cont{
   height: fit-content;
   border-color:white;
+}
+.members .sidebar form div .icon_cont i{
+ color: rgb(121, 121, 121);
 }
 .members .sidebar form div .icon_cont #userIcon,.members .sidebar form div .icon_cont #passwordIcon {
   font-size: 25px;
@@ -59,12 +62,16 @@ box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 -webkit-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 -moz-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 }
+.members .row .data .box .body h5{
+ font-size: 18px;
+ letter-spacing: -0.8px;
+}
 .members .row .data .box .body{
-  height: 133px;
+  padding-top: 10px;
+  height: 158px;
   overflow-y: hidden;
 }
 .members .row .data .box .footer{
-  margin-top: 22px;
   font-size: 14px;
 }
 .members .row .data .box .bookImg{
@@ -75,7 +82,7 @@ box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
 }
 .members .row .data .box span #value{
   padding-top: 1px;
-  padding-bottom: 10px;
+  padding-bottom: 2px;
   padding-left: 5px;
   padding-right: 5px;
   font-size: 14px;

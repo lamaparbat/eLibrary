@@ -22,6 +22,7 @@
  <!-- body -->
  <!-- create course -->
  <?php include 'createCourse.php'; ?>
+ <br />
  <div class="container members mt-5">
   <div class="row">
 
@@ -35,21 +36,21 @@
       <div class="icon_cont px-3 py-1 bg-light">
        <i class="fa fa-user" aria-hidden="true" id="userIcon"></i>
       </div>
-      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter your username" name="uname" id="uname" />
+      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter book name" name="uname" id="uname" />
      </div>
      <span>Enter your email address</span>
      <div class="d-flex mt-2 mb-4">
       <div class="icon_cont px-3 py-1 bg-light">
        <i class="fa fa-envelope" aria-hidden="true" id="emailIcon"></i>
       </div>
-      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter your username" name="email" id="uname" />
+      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter email address" name="email" id="uname" />
      </div>
      <span>Enter your password</span>
      <div class="d-flex mt-2 mb-4">
       <div class="icon_cont px-3 py-1 bg-light">
        <i class="fa fa-lock" aria-hidden="true" id="passwordIcon"></i>
       </div>
-      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter your username" name="password" id="uname" />
+      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter password" name="password" id="uname" />
      </div>
      <span>upload profile picture</span>
      <div class="d-flex mt-2 mb-4">
@@ -92,7 +93,6 @@
        <h5 class="mx-3 my-2"><b>Captured Heart</b></h5>
        <span class="mx-3">Authors: <font id="value">Parbat Lama</font></span>
        <span class="mx-3">Category: <font id="value">Mystery</font></span>
-       <span class="mx-3">Available: <font class="text-success" id="value">12 Books</font></span>
        <span class="mx-3">Published: <font id="value">12th march,2021</font></span>
       </div>
       <div class="d-flex justify-content-around footer">
