@@ -67,6 +67,7 @@
  display: flex;
  justify-content: space-between;
  align-items: center;
+ background-color: white;
 }
 #navbar #rightNav{
  display: flex;
