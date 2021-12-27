@@ -5,7 +5,7 @@
   </div>
   <div class="totalMem mx-3 p-2 px-3 rounded-1" id="memberCount">
    <i class="fa fa-users mx-2" aria-hidden="true"></i>
-   <span>Members(100)</span>
+   <span>List name(100)</span>
   </div>
   <div>
    <i class="fa fa-search px-3" aria-hidden="true"></i>
