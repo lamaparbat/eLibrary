@@ -12,7 +12,7 @@
     <button class="px-3 py-1 my-3 bg-white shadow-none" id="setting_btn">Manage your account</button>
    </center>
    <hr class="text-secondary" />
-   <center><button class="px-3 py-1 my-3 bg-white shadow-none" id="logout_btn">
+   <center><button class="px-3 py-1 my-3 bg-white shadow-none" id="logout_btn" onclick="logout()">
      <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out account &nbsp;
     </button></center>
    <div class="copyright">

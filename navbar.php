@@ -24,7 +24,7 @@
   <i class="fa fa-plus" data-bs-toggle="tooltip" data-bs-placement="top" title="Add a new book" onclick="createBook()" draggable="false"></i>
   <img src="./img/paint.png" height="28px" width="28px" data-bs-toggle="tooltip" data-bs-placement="top" title="Change BG color" aria-hidden="true" onclick="changeBackground()" draggable="false"></i>
   <div id="avatar">
-   <img src="./img/avatar.png" height="100%" width="100%" onclick="showProfile_nav()" draggable="false" />
+   <img src="./backend/uploads/<?php echo $data[2]; ?>" height="100%" width="100%" onclick="showProfile_nav()" draggable="false" />
   </div>
  </div>
 </div>

@@ -14,18 +14,23 @@
 </head>
 
 <body>
- <!-- *******  header ****** -->
- <?php include 'navbar.php'; ?>
+
+
+ <!-- default authentical routing -->
+ <?php include "auth.php"; ?>
 
  <!-- profile navigation items -->
  <?php include 'profile_nav.php'; ?>
 
-<br/><br/><br/>
+ <br /><br /><br />
  <!-- ****** body  ****** -->
  <?php include 'body.php'; ?>
 
  <!-- create course -->
  <?php include 'createCourse.php'; ?>
+
+ <!-- *******  header ****** -->
+ <?php include 'navbar.php'; ?>
 
  <!-- ****** footer ****** -->
 

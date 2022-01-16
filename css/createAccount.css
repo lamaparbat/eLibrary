@@ -1,0 +1,76 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+img{
+ top: -29px;
+ left: 30px;
+ height: 120px;
+ width: 130px;
+ position: absolute;
+ cursor: pointer;
+}
+.container{
+  margin-top: 70px;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.container .form{
+  padding-left: 15px;
+  height: fit-content;
+  width: 500px;
+  background-color: white;
+  box-shadow: -1px 0px 7px 0px rgba(212,212,212,0.75);
+  -webkit-box-shadow: -1px 0px 7px 0px rgba(212,212,212,0.75);
+  -moz-box-shadow: -1px 0px 7px 0px rgba(212,212,212,0.75);
+}
+.form #file_inp{
+  margin-left: 20px;
+  width: 420px;
+}
+
+.form .first_row{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.form .first_row input{
+  padding: 5px;
+  padding-left: 15px;
+}
+
+.form .second_row{
+ padding-left: 20px;
+padding-right: 20px;
+margin-bottom: 20px;
+}
+.form .second_row input{
+  width: 100%;
+  padding: 5px;
+  padding-left: 15px;
+}
+
+@media(max-width:1100px){
+.form .first_row{
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+.form .first_row input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+.form #file_inp{
+  margin-left: 5px;
+  width: 100%;
+}
+.form .second_row{
+ padding-left: 0px;
+ padding-right: 0px;
+}
+}

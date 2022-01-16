@@ -10,3 +10,8 @@ window.addEventListener("resize", function (e) {
   document.querySelector(".members .row .sidebar").style.display = "block";
  }
 })
+
+function logout() {
+ alert("logout clicked");
+  location.assign("http://localhost/eLibrary/backend/logout.php")
+}
