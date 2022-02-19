@@ -115,6 +115,7 @@
  background-color: blue;
  cursor: pointer;
  overflow-x: hidden;
+ object-fit: fill;
 }
 #navbar #leftNav #avatar:hover{
  opacity: 0.8;

@@ -8,7 +8,7 @@ if(isset($_POST["btn"])){
   $password = $_POST["password"];
 
   //db insertion
-  $query = "SELECT * FROM user WHERE email='$email' AND password = '$password'";
+  $query = "SELECT * FROM admin WHERE email='$email' AND password = '$password'";
   $result = mysqli_query($con, $query);
   if(mysqli_num_rows($result) > 0){
   //get the user data
@@ -19,7 +19,7 @@ if(isset($_POST["btn"])){
     $user_data[0] = $row["email"];
     $user_data[1] = $row["name"];
     $user_data[2] = $row["src"];
-    $user_data[3] = "user";
+    $user_data[3] = "admin";
    }
   }
     //save the cookies on browser
@@ -32,5 +32,3 @@ if(isset($_POST["btn"])){
     header("Location: http://localhost/eLibrary/login.php");
   }
 }
-
-?>

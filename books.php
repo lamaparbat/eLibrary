@@ -11,7 +11,7 @@
  <link rel="stylesheet" href="./css/index.css">
  <link rel="stylesheet" href="./css/searchNav.css">
  <link rel="stylesheet" href="./css/createCourse.css">
- <title>Library Management System/Members</title>
+ <title>eLibrary/Books</title>
 </head>
 
 <body>
@@ -30,34 +30,49 @@
    <div class="col-sm-4 p-5 sidebar bg-light text-dark">
     <h5 id="title">Insert a new Book</h5>
     <hr class="mt-1" />
-    <form class="pt-0" method="post" enctype="multipart/form-data">
+    <form action="./backend/createBooks.php" class="pt-0" method="post" enctype="multipart/form-data">
      <span>Enter Book name</span>
      <div class="d-flex mt-2 mb-4">
       <div class="icon_cont px-3 py-1 bg-light">
        <i class="fa fa-user" aria-hidden="true" id="userIcon"></i>
       </div>
-      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter book name" name="uname" id="uname" />
+      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter book name" name="book_name" id="uname" />
      </div>
-     <span>Enter your email address</span>
+     <span>Enter Author name</span>
      <div class="d-flex mt-2 mb-4">
       <div class="icon_cont px-3 py-1 bg-light">
        <i class="fa fa-envelope" aria-hidden="true" id="emailIcon"></i>
       </div>
-      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter email address" name="email" id="uname" />
+      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter author name" name="book_author" id="uname" />
      </div>
-     <span>Enter your password</span>
+     <span>Enter book category</span>
      <div class="d-flex mt-2 mb-4">
       <div class="icon_cont px-3 py-1 bg-light">
-       <i class="fa fa-lock" aria-hidden="true" id="passwordIcon"></i>
+       <i class="fa fa-book" aria-hidden="true" id="passwordIcon"></i>
       </div>
-      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter password" name="password" id="uname" />
+      <select class="form-control" name="book_category">
+       <option value="History">History</option>
+       <option value="Physics">Physics</option>
+       <option value="Geography">Geography</option>
+       <option value="Computer Science">Computer Science</option>
+       <option value="Biology">Biology</option>
+       <option value="Chemistry">Chemistry</option>
+       <option value="Literature">Literature</option>
+      </select>
      </div>
-     <span>upload profile picture</span>
+     <span>Enter published date</span>
+     <div class="d-flex mt-2 mb-4">
+      <div class="icon_cont px-3 py-1 bg-light">
+       <i class="fa fa-calendar-o" aria-hidden="true" id="passwordIcon"></i>
+      </div>
+      <input type="date" class="form-control shadow-0 rounded-0" name="book_published" id="uname" />
+     </div>
+     <span>upload cover picture</span>
      <div class="d-flex mt-2 mb-4">
       <div class="icon_cont px-3 py-1 bg-light">
        <i class="fa fa-picture-o" aria-hidden="true" id="img"></i>
       </div>
-      <input type="file" class="form-control shadow-0 rounded-0" name="img" id="img" />
+      <input type="file" class="form-control shadow-0 rounded-0" name="book_img" id="img" />
      </div>
      <input type="submit" name="submit" value="Create" class="btn btn-primary mt-1 px-5 rounded-0" />
     </form>
@@ -67,139 +82,30 @@
    <div class="col-sm-8 px-3 data bg-text-dark">
     <?php include 'searchNav.php' ?>
     <div class="boxCont d-flex text-dark">
-     <div class="box pb-2 mx-1 my-2">
-      <br />
-      <div class="bookImg">
-       <img src="https://img1.hotstarext.com/image/upload/f_auto,t_hcdl/sources/r1/cms/prod/old_images/MOVIE/333/1770000333/1770000333-h" loading="lazy" class="img-fluid" id="memberImg" />
-      </div>
-      <div class="body">
-       <h5 class="mx-3 my-2"><b>The fault in our stars</b></h5>
-       <span class="mx-3">Authors: <font id="value">Parbat Lama</font></span>
-       <span class="mx-3">Category: <font id="value">Romance</font></span>
-       <span class="mx-3">Published: <font id="value">12th march,2021</font></span>
-      </div>
-      <div class="d-flex justify-content-around footer">
-       <div class="edit_cont px-2"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</div>
-       <div class="edit_cont px-2"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>
-      </div>
-     </div>
-
-     <div class="box pb-2 mx-1 my-2">
-      <br />
-      <div class="bookImg">
-       <img src=" https://img.wattpad.com/cover/34887092-512-k223341.jpg" class="img-fluid" id="memberImg" loading="lazy" />
-      </div>
-      <div class="body">
-       <h5 class="mx-3 my-2"><b>Captured Heart</b></h5>
-       <span class="mx-3">Authors: <font id="value">Parbat Lama</font></span>
-       <span class="mx-3">Category: <font id="value">Mystery</font></span>
-       <span class="mx-3">Published: <font id="value">12th march,2021</font></span>
-      </div>
-      <div class="d-flex justify-content-around footer">
-       <div class="edit_cont px-2"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</div>
-       <div class="edit_cont px-2"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>
-      </div>
-     </div>
-
-     <div class="box pb-2 mx-1 my-2">
-      <br />
-      <div class="bookImg">
-       <img src="https://d2s6h2b6.stackpathcdn.com/blog/wp-content/uploads/2019/03/Java-Programming-4-1.png" class="img-fluid" id="memberImg" />
-      </div>
-      <div class="body">
-       <h5 class="mx-3 my-2"><b>Java Programming (Zero to Hero)</b></h5>
-       <span class="mx-3">Authors: <font id="value">Parbat Lama</font></span>
-       <span class="mx-3">Category: <font id="value">Programming</font></span>
-       <span class="mx-3">Published: <font id="value">12th march,2021</font></span>
-      </div>
-      <div class="d-flex justify-content-around footer">
-       <div class="edit_cont px-2"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</div>
-       <div class="edit_cont px-2"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>
-      </div>
-     </div>
-
-     <div class="box pb-2 mx-1 my-2">
-      <br />
-      <div class="bookImg">
-       <img src="https://morningsidemaryland.com/wp-content/uploads/2021/09/YouTube-17.jpg" loading="lazy" class="img-fluid" id="memberImg" />
-      </div>
-      <div class="body">
-       <h5 class="mx-3 my-2"><b>Spiderman - No way home</b></h5>
-       <span class="mx-3">Authors: <font id="value">Parbat Lama</font></span>
-       <span class="mx-3">Category: <font id="value">Comic</font></span>
-       <span class="mx-3">Published: <font id="value">12th march,2021</font></span>
-      </div>
-      <div class="d-flex justify-content-around footer">
-       <div class="edit_cont px-2"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</div>
-       <div class="edit_cont px-2"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>
-      </div>
-     </div>
-
-     <div class="box pb-2 mx-1 my-2">
-      <br />
-      <div class="bookImg">
-       <img src="https://i.ytimg.com/vi/0_nAHeLXcXc/maxresdefault.jpg" class="img-fluid" id="memberImg" />
-      </div>
-      <div class="body">
-       <h5 class="mx-3 my-2"><b>Artificial Intelligence</b></h5>
-       <span class="mx-3">Authors: <font id="value">Parbat Lama</font></span>
-       <span class="mx-3">Category: <font id="value">Computer Science</font></span>
-       <span class="mx-3">Published: <font id="value">12th march,2021</font></span>
-      </div>
-      <div class="d-flex justify-content-around footer">
-       <div class="edit_cont px-2"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</div>
-       <div class="edit_cont px-2"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>
-      </div>
-     </div>
-
-     <div class="box pb-2 mx-1 my-2">
-      <br />
-      <div class="bookImg">
-       <img src="https://phantom-marca.unidadeditorial.es/8256e68fdfac5b6a6c792af7308d27e8/crop/0x0/1597x899/resize/1320/f/jpg/assets/multimedia/imagenes/2021/10/01/16330974723192.png" loading="lazy" class="img-fluid" id="memberImg" />
-      </div>
-      <div class="body">
-       <h5 class="mx-3 my-2"><b>Squid Game</b></h5>
-       <span class="mx-3">Authors: <font id="value">Parbat Lama</font></span>
-       <span class="mx-3">Category: <font id="value">History</font></span>
-       <span class="mx-3">Published: <font id="value">12th march,2021</font></span>
-      </div>
-      <div class="d-flex justify-content-around footer">
-       <div class="edit_cont px-2"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</div>
-       <div class="edit_cont px-2"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>
-      </div>
-     </div>
-
-     <div class="box pb-2 mx-1 my-2">
-      <br />
-      <div class="bookImg">
-       <img src="https://cdn.datafloq.com/cache/blog_pictures/2021/05/07/878x531/data-science-books.jpg" loading="lazy" class="img-fluid" id="memberImg" />
-      </div>
-      <div class="body">
-       <h5 class="mx-3 my-2"><b>Data Science</b></h5>
-       <span class="mx-3">Authors: <font id="value">Parbat Lama</font></span>
-       <span class="mx-3">Category: <font id="value">Computer Science</font></span>
-       <span class="mx-3">Published: <font id="value">12th march,2021</font></span>
-      </div>
-      <div class="d-flex justify-content-around footer">
-       <div class="edit_cont px-2"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</div>
-       <div class="edit_cont px-2"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>
-      </div>
-     </div>
+      Data fetching .......
     </div>
-
    </div>
   </div>
- </div>
 
- <!-- footer -->
+  <!-- bootstrap mdn -->
+  <script src="./js/navbar.js"></script>
+  <script src="./js/createCourse.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" integrity="sha512-chZc2Mx8B1GzGSNMfJRH63jW7uYZXzX0a/UlWRrTvl4kxxYqUHNMtyTTA5IDQ7gTl4ATLoXlZthsialW3muS0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://use.fontawesome.com/8af7dff76b.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-
- <!-- bootstrap mdn -->
- <script src="./js/navbar.js"></script>
- <script src="./js/createCourse.js"></script>
- <script src="https://use.fontawesome.com/8af7dff76b.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <!-- fetching books from server -->
+  <script>
+   $.ajax({
+    type: "GET",
+    url: "./backend/getBooks.php",
+    dataType: "html",
+    success: function(data) {
+     $(".col-sm-8 .boxCont").html(data);
+    }
+   })
+  </script>
 </body>
 
 </html>
