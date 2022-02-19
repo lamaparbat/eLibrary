@@ -25,9 +25,12 @@
     <div class="email_cont">
      <i class="fa fa-eye"></i>
      <input type="password" name="password" class="form-control" placeholder="Enter password" required>
-    </div><br /><br/>
+    </div><br /><br />
     <center>
-     <input type="submit" name="btn" value="Login" id="login_btn" />
+     <input type="submit" name="btn" value="Login" id="login_btn" /><br /><br />
+     <a href="http://localhost/elibrary/createAccount.php">New to the site ?</a>
+     &nbsp;&nbsp;&nbsp;
+     <a href="http://localhost/elibrary/forgetPassword.php">Forget password ?</a>
     </center>
    </form>
   </div>

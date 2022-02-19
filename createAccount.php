@@ -37,7 +37,10 @@
     <input type="file" id="file_inp" name="file_inp" class="form-control" placeholder="Enter email or phone number" required /><br />
     <!-- submit button input -->
     <center>
-     <input type="submit" name="create_btn" class="btn btn-primary px-5 rounded-0" value="Create a new Account">
+     <input type="submit" name="create_btn" class="btn btn-primary px-5 rounded-0" value="Create a new Account"><br />
+    </center><br />
+    <center>
+     <a href="http://localhost/elibrary/login.php" id="redirect_link">Alread have account ?</a>
     </center>
    </form>
   </div>

@@ -18,8 +18,8 @@
 
 .sidenav #avatar{
  margin-left: 70px;
- height: 100px;
- width: 100px;
+ height: 150px;
+ width: 150px;
  border-radius: 50%;
  background-color: blue;
  cursor: pointer;
@@ -109,8 +109,8 @@
 }
 
 #navbar #leftNav #avatar{
- height: 32px;
- width: 32px;
+ height: 38px;
+ width: 38px;
  border-radius: 50%;
  background-color: blue;
  cursor: pointer;
