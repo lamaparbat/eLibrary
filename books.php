@@ -76,7 +76,8 @@
               </div>
               <input type="file" class="form-control shadow-0 rounded-0" name="book_img" id="img" />
             </div>
-            <input type="submit" name="submit" value="Create" class="btn btn-primary mt-1 px-5 rounded-0" />
+            <input type="submit" name="submit" value="Create" class="btn btn-primary mt-1 px-5 rounded-0" onclick="updateComplete()" />
+            <a class="btn btn-danger mt-1 px-5 rounded-0 cancelBtn" onclick="hideSidebar()">Cancel</a>
           </form>
         </div>
       <?php } ?>
@@ -114,7 +115,8 @@
 
 <!-- fetching books from server -->
 <script>
-  $(".boxCont").click((e) => {
+  // hide the sidebar form 
+  function hideSidebar() {
     if ($(".members .sidebar").css("display") == "none") {
       $(".members .rows .data").css("width", "70%")
       $(".members .sidebar").css("display", "block")
@@ -122,7 +124,64 @@
       $(".members .rows .data").css("width", "100%")
       $(".members .sidebar").css("display", "none")
     }
+  }
+
+  // display cancel btn based on width
+  if (window.innerWidth > 1090) {
+    $(".cancelBtn").hide();
+  } else {
+    $(".cancelBtn").show();
+  }
+  $(window).on("resize", () => {
+    if (window.innerWidth > 1090) {
+      $(".cancelBtn").hide();
+    } else {
+      $(".cancelBtn").show();
+    }
   })
+
+  //edit the card details
+  function edit(id, event) {
+    const cardObj = event.currentTarget.parentElement.parentElement
+    const cardDesc = event.currentTarget.parentElement.parentElement.children[2]
+    const src = cardObj.children[1].children[0].src;
+    const title = cardDesc.children[0].innerText
+    const author = cardDesc.children[1].innerText
+    const category = cardDesc.children[2].innerText
+    const published = cardDesc.children[3].innerText
+
+    // change the btn value to update
+    $(".members .sidebar form").children().toArray()[10].value = "Update";
+    $(".members .sidebar").children().toArray()[2].action = "./backend/updateBooks.php";
+
+    //loading the field value to the sidebar form
+    $(".members .sidebar form div").children().toArray()[1].value = title
+    $(".members .sidebar form div").children().toArray()[4].value = author
+    $(".members .sidebar form div").children().toArray()[7].children[0].innerText = category
+    $(".members .sidebar form div").children().toArray()[13].src = src
+
+    // hide window based on width size
+    if (window.innerWidth < 1090) {
+      hideSidebar()
+    }
+  }
+
+  function Delete(id) {
+    confirm("Are you sure want to delete ",id);
+    $.ajax({
+      type: "POST",
+      url: "./backend/deleteBook.php",
+      data:{id:id},
+      success: function() {
+         alert("Successfully deleted !!")
+      },
+      error: function(){ 
+        alert("Failed to delete !!")
+     }
+    })
+  }
+
+  // search books response
   $.ajax({
     type: "GET",
     url: "./backend/getBooks.php",

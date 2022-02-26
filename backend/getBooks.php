@@ -33,13 +33,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
        <span class="mx-3">Published: <font id="value">' . $published . '</font></span>
       </div>
       <div class="d-flex justify-content-around footer">
-       <div id="card_id' . $id . '" class="edit_cont px-2 d-' . $display . '">
+       <div 
+         id="card_id' . $id . '" 
+         class="edit_cont px-2 d-' . $display . '"
+          onclick="edit(' . $id . ', event)" >
           <i class="fa fa-pencil" aria-hidden="true"></i> Edit
        </div>
-       <div class="edit_cont px-2 d-' . $display . '">
+       <div class="edit_cont px-2 d-' . $display . '" onclick="Delete('.$id.')">
            <i class="fa fa-trash" aria-hidden="true"></i> Delete
        </div>
-       <div class="edit_cont px-2 d-' .(json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none': 'inline'). '">
+       <div
+         class="edit_cont px-2 d-' .(json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none': 'inline'). '"
+      >
            <i class="fa fa-rocket" aria-hidden="true"></i> Issue
        </div>
        <div class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '">

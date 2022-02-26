@@ -2,25 +2,25 @@
 include 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
- $keyword = $_POST["data"];
- $query = "SELECT * FROM books WHERE name LIKE '$keyword%'";
- $res = mysqli_query($con, $query) or die(mysqli_error($con));
- while ($row = mysqli_fetch_assoc($res)) {
-  //data
-  $id = $row["id"];
-  $name = $row["name"];
-  $author = $row["author"];
-  $category = $row["category"];
-  $published = $row["published"];
-  $src = 'backend/books_img/' . $row["src"];
+   $keyword = $_POST["data"];
+   $query = "SELECT * FROM books WHERE name LIKE '$keyword%'";
+   $res = mysqli_query($con, $query) or die(mysqli_error($con));
+   while ($row = mysqli_fetch_assoc($res)) {
+      //data
+      $id = $row["id"];
+      $name = $row["name"];
+      $author = $row["author"];
+      $category = $row["category"];
+      $published = $row["published"];
+      $src = 'backend/books_img/' . $row["src"];
 
-  //visibility based on admin and user
-  $display = "none";
-  if (json_decode($_COOKIE["user_data"])[3] === "admin") {
-   $display = "inline";
-  }
+      //visibility based on admin and user
+      $display = "none";
+      if (json_decode($_COOKIE["user_data"])[3] === "admin") {
+         $display = "inline";
+      }
 
-  echo '
+      echo '
      <div class="box pb-2 mx-1 my-2">
       <br />
      <div class="bookImg">
@@ -33,15 +33,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        <span class="mx-3">Published: <font id="value">' . $published . '</font></span>
       </div>
       <div class="d-flex justify-content-around footer">
-       <div class="edit_cont px-2 d-' . $display . '">
+       <div 
+         id="card_id' . $id . '" 
+         class="edit_cont px-2 d-' . $display . '"
+          onclick="edit(' . $id . ', event)" >
           <i class="fa fa-pencil" aria-hidden="true"></i> Edit
        </div>
-       <div class="edit_cont px-2 d-' . $display . '">
+       <div class="edit_cont px-2 d-' . $display . '" onclick="Delete(' . $id . ')">
            <i class="fa fa-trash" aria-hidden="true"></i> Delete
        </div>
-       <div 
-        id="card_id' . $id . '"
-        class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '">
+       <div
+         class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '"
+      >
            <i class="fa fa-rocket" aria-hidden="true"></i> Issue
        </div>
        <div class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '">
@@ -50,5 +53,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
      </div>
     ';
- }
+   }
 }
