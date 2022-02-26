@@ -3,11 +3,11 @@ include 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  $keyword = $_POST["data"];
-
  $query = "SELECT * FROM books WHERE name LIKE '$keyword%'";
  $res = mysqli_query($con, $query) or die(mysqli_error($con));
  while ($row = mysqli_fetch_assoc($res)) {
   //data
+  $id = $row["id"];
   $name = $row["name"];
   $author = $row["author"];
   $category = $row["category"];
@@ -39,7 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        <div class="edit_cont px-2 d-' . $display . '">
            <i class="fa fa-trash" aria-hidden="true"></i> Delete
        </div>
-       <div class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '">
+       <div 
+        id="card_id' . $id . '"
+        class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '">
            <i class="fa fa-rocket" aria-hidden="true"></i> Issue
        </div>
        <div class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '">
@@ -50,4 +52,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ';
  }
 }
-?>

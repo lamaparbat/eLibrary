@@ -4,8 +4,6 @@
 
   if($data[0] == ""){
     header("Location: http://localhost/eLibrary/login.php");
-  }else{
-     echo $data[1]." User is logged in";
   }
 
 ?>

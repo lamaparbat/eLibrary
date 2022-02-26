@@ -29,7 +29,7 @@
     data: e.target.value
    },
    success: function(data) {
-    $(".col-sm-8 .boxCont").html(data);
+    $(".boxCont").html(data);
    }
   })
  })

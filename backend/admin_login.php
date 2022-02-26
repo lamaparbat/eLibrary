@@ -15,7 +15,6 @@ if(isset($_POST["btn"])){
   $user_data = [];
   while ($row = mysqli_fetch_assoc($result)) {
    if ($row["email"] == $email) {
-    echo $row["email"];
     $user_data[0] = $row["email"];
     $user_data[1] = $row["name"];
     $user_data[2] = $row["src"];

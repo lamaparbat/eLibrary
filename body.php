@@ -1,6 +1,7 @@
  <br /><span id="title">Control Panel</span>
 
  <div class="main mt-3">
+
   <!-- row1 -->
   <div class="box1">
    <div class="d-flex justify-content-between">

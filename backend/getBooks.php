@@ -7,6 +7,7 @@ $res = mysqli_query($con, $query) or die(mysqli_error($con));
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
  while ($row = mysqli_fetch_assoc($res)) {
   //data
+  $id = $row["id"];
   $name = $row["name"];
   $author = $row["author"];
   $category = $row["category"];
@@ -32,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
        <span class="mx-3">Published: <font id="value">' . $published . '</font></span>
       </div>
       <div class="d-flex justify-content-around footer">
-       <div class="edit_cont px-2 d-' . $display . '">
+       <div id="card_id' . $id . '" class="edit_cont px-2 d-' . $display . '">
           <i class="fa fa-pencil" aria-hidden="true"></i> Edit
        </div>
        <div class="edit_cont px-2 d-' . $display . '">

@@ -1,29 +1,33 @@
-.searchNav{
- width: 58%;
- position: fixed;
- box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
--webkit-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
--moz-box-shadow: 0px 1px 5px 0px rgba(181,181,181,0.75);
+.searchNav {
+  width: 600px;
+  position: fixed;
+  background-color: red;
+  box-shadow: 0px 1px 5px 0px rgba(181, 181, 181, 0.75);
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(181, 181, 181, 0.75);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(181, 181, 181, 0.75);
 }
-.searchNav #searchbar{
+
+.searchNav #searchbar {
   padding: 5px;
   padding-left: 5px;
   padding-left: 20px;
   display: flex;
   justify-content: start;
   align-items: center;
-  background-color:white;
+  background-color: white;
 }
 
-.searchNav #searchbar div{
- background-color: whitesmoke;
- display: flex;
- align-items: center;
+.searchNav #searchbar div {
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
 }
-.searchNav #searchbar div i{
+
+.searchNav #searchbar div i {
   font-size: 18px;
 }
-.searchNav #searchbar div input{
+
+.searchNav #searchbar div input {
   width: 100%;
   padding-left: 25px;
   color: red;
@@ -31,14 +35,33 @@
   border-left: 1px solid rgb(221, 221, 221);
 }
 
-@media(max-width:1100px){
-.searchNav{
- width: 90%;
+@media(max-width:1450px) {
+  .searchNav #searchbar div input {
+    padding-left: 10px;
+  }
+
+  .searchNav #searchbar #memberCount {
+    display: none;
+  }
 }
-.searchNav #searchbar div input{
- padding-left: 10px;
+
+@media(max-width:1100px) {
+  .members {
+    overflow-y: visible;
+  }
+
+  .members .sidebar {
+    display: none;
+  }
+
+  .members .rows .data {
+    width: 100%;
+    justify-content: center;
+  }
 }
-.searchNav #searchbar #memberCount{
- display: none;
-}
+
+@media(max-width:650px) {
+  .searchNav {
+    width: 90%;
+  }
 }
