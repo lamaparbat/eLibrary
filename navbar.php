@@ -33,7 +33,6 @@
      <img id="avatar" src="./backend/uploads/<?php echo json_decode($_COOKIE["user_data"])[2]; ?>" height="100%" width="100%" onclick="showProfile_nav()" draggable="false" />
    </div>
  </div>
-
  <script>
    function redirectHomepage() {
      location.assign("http://localhost/elibrary/")

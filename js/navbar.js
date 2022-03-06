@@ -1,3 +1,23 @@
+//fetch the dark mode based on cache data
+// if (localStorage.getItem("elibrary") != null) {
+//  if (localStorage.getItem("elibrary") == "white") {
+//   document.querySelector("body").style.backgroundColor = "white";
+//   document.querySelector("body").style.color = "black";
+//   document.querySelector(".sidenav").style.backgroundColor = "white";
+//   document.querySelector(".sidenav").style.color = "black";
+//   document.querySelector("#navbar #rightNav img").src = "./img/logo.png";
+//   document.querySelector("#navbar #leftNav img").src = "./img/paint.png";
+//  } else {
+//   document.querySelector("body").style.backgroundColor = "#110E0E";
+//   document.querySelector("body").style.color = "white";
+//   document.querySelector(".sidenav").style.backgroundColor = "black";
+//   document.querySelector(".sidenav").style.color = "white";
+//   document.querySelector("#navbar #rightNav").style.bottomBottom = "1px solid rgb(53, 53, 53)";
+//   document.querySelector("#navbar #rightNav img").src = "./img/logo2.png";
+//   document.querySelector("#navbar #leftNav img").src = "./img/paint2.png";
+//  }
+// }
+
 //change dark mode background
 document.querySelector("body").style.backgroundColor = "white";
 document.querySelector(".sidenav").style.backgroundColor = "white";
@@ -8,8 +28,12 @@ function changeBackground() {
   document.querySelector("body").style.color = "white";
   document.querySelector(".sidenav").style.backgroundColor = "black";
   document.querySelector(".sidenav").style.color = "white";
+  document.querySelector("#navbar #rightNav").style.bottomBottom = "1px solid rgb(53, 53, 53)";
   document.querySelector("#navbar #rightNav img").src = "./img/logo2.png";
   document.querySelector("#navbar #leftNav img").src = "./img/paint2.png";
+  
+  //save the darkmode to cache
+  window.localStorage.setItem("elibrary", "dark");
  } else {
   document.querySelector("body").style.backgroundColor = "white";
   document.querySelector("body").style.color = "black";
@@ -17,7 +41,8 @@ function changeBackground() {
   document.querySelector(".sidenav").style.color = "black";
   document.querySelector("#navbar #rightNav img").src = "./img/logo.png";
   document.querySelector("#navbar #leftNav img").src = "./img/paint.png";
-
+  //save the darkmode to cache
+  window.localStorage.setItem("elibrary", "white");
  }
 }
 

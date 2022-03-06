@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../eLibrary/img/title_logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/navbar.css">
   <link rel="stylesheet" href="./css/books.css">
@@ -60,6 +61,7 @@
                 <option value="Biology">Biology</option>
                 <option value="Chemistry">Chemistry</option>
                 <option value="Literature">Literature</option>
+                <option value="Literature">Romantic</option>
               </select>
             </div>
             <span>Enter published date</span>
@@ -167,17 +169,19 @@
   }
 
   function Delete(id) {
-    confirm("Are you sure want to delete ",id);
+    confirm("Are you sure want to delete ", id);
     $.ajax({
       type: "POST",
       url: "./backend/deleteBook.php",
-      data:{id:id},
-      success: function() {
-         alert("Successfully deleted !!")
+      data: {
+        id: id
       },
-      error: function(){ 
+      success: function(data) {
+        location.assign("http://localhost/eLibrary/books.php")
+      },
+      error: function() {
         alert("Failed to delete !!")
-     }
+      }
     })
   }
 

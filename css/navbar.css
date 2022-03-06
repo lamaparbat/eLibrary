@@ -1,34 +1,45 @@
 /* The side navigation menu */
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
   left: 0;
-  background-color: white; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  box-shadow: 8px -2px 5px -5px rgba(161,161,161,0.56);
-  -webkit-box-shadow: 8px -2px 5px -5px rgba(161,161,161,0.56);
-  -moz-box-shadow: 8px -2px 5px -5px rgba(161,161,161,0.56);
+  background-color: white;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+  box-shadow: 8px -2px 5px -5px rgba(161, 161, 161, 0.56);
+  -webkit-box-shadow: 8px -2px 5px -5px rgba(161, 161, 161, 0.56);
+  -moz-box-shadow: 8px -2px 5px -5px rgba(161, 161, 161, 0.56);
   font-family: 'Courier New', Courier, monospace;
 }
 
-.sidenav #avatar{
- margin-left: 70px;
- height: 150px;
- width: 150px;
- border-radius: 50%;
- background-color: blue;
- cursor: pointer;
- overflow:hidden;
+.sidenav #avatar {
+  margin-left: 70px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: blue;
+  cursor: pointer;
+  overflow: hidden;
 }
-.sidenav #avatar img{
+
+.sidenav #avatar img {
   transform: scale(0.8);
 }
-.sidenav span{
+
+.sidenav span {
   margin-left: 55px;
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -60,72 +71,89 @@
 }
 
 /* navbar */
-#navbar{
- padding: 15px;
- padding-left: 35px;
- border-bottom: 1px solid rgb(185, 185, 185);
- display: flex;
- justify-content: space-between;
- align-items: center;
- background-color: white;
+#navbar {
+  padding: 15px;
+  padding-left: 35px;
+  border-bottom: 1px solid rgb(224 222 222);
+  display: flex;
+background:unset !important;
+color: unset !important;
+  justify-content: space-between;
+  align-items: center;
 }
-#navbar #rightNav{
- display: flex;
+
+#navbar #rightNav {
+  display: flex;
 }
-#navbar #rightNav i{
+
+#navbar #rightNav i {
   font-size: 20px;
   cursor: pointer;
 }
-#navbar #rightNav i:hover{
- opacity: 0.8;
-}
-#navbar #rightNav img{
- top: -29px;
- left: 70px;
- height: 120px;
- width: 130px;
- position: absolute;
- cursor: pointer;
+
+#navbar #rightNav i:hover {
+  opacity: 0.8;
 }
 
-#navbar #leftNav{
- width: 180px;
- display: flex;
- align-items: center;
- justify-content: space-around;
-}
-#navbar #leftNav i{
- font-size: 20px;
- cursor: pointer;
-}
-#navbar #leftNav i:hover{
- opacity: 0.8;
-}
-#navbar #leftNav img{
- cursor: pointer;
-}
-#navbar #leftNav img:hover{
- opacity: 0.7;
+#navbar #rightNav img {
+  top: -29px;
+  left: 70px;
+  height: 120px;
+  width: 130px;
+  position: absolute;
+  cursor: pointer;
 }
 
-#navbar #leftNav #avatar{
- height: 38px;
- width: 38px;
- border-radius: 50%;
- background-color: blue;
- cursor: pointer;
- overflow-x: hidden;
- object-fit: fill;
+#navbar #leftNav {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-#navbar #leftNav #avatar:hover{
- opacity: 0.8;
+
+#navbar #leftNav i {
+  font-size: 20px;
+  cursor: pointer;
 }
-#navbar #leftNav #avatar img{
- transform: scale(0.8);
- cursor: pointer;
+
+#navbar #leftNav i:hover {
+  opacity: 0.8;
 }
+
+#navbar #leftNav img {
+  cursor: pointer;
+}
+
+#navbar #leftNav img:hover {
+  opacity: 0.7;
+}
+
+#navbar #leftNav #avatar {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  background-color: blue;
+  cursor: pointer;
+  overflow-x: hidden;
+  object-fit: fill;
+}
+
+#navbar #leftNav #avatar:hover {
+  opacity: 0.8;
+}
+
+#navbar #leftNav #avatar img {
+  transform: scale(0.8);
+  cursor: pointer;
+}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
 }

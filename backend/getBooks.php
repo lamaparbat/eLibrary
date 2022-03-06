@@ -5,22 +5,26 @@ $query = "SELECT * FROM books";
 $res = mysqli_query($con, $query) or die(mysqli_error($con));
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
- while ($row = mysqli_fetch_assoc($res)) {
-  //data
-  $id = $row["id"];
-  $name = $row["name"];
-  $author = $row["author"];
-  $category = $row["category"];
-  $published = $row["published"];
-  $src = 'backend/books_img/' . $row["src"];
+   while ($row = mysqli_fetch_assoc($res)) {
+      //data
+      $id = $row["id"];
+      $name = $row["name"];
+      if (strlen($row["author"]) > 14) {
+         $author = substr($row["author"], 0, 15) . "..";
+      } else {
+         $author = $row["author"];
+      }
+      $category = $row["category"];
+      $published = $row["published"];
+      $src = 'backend/books_img/' . $row["src"];
 
-  //visibility based on admin and user
-  $display = "none";
-  if(json_decode($_COOKIE["user_data"])[3] === "admin"){
-   $display = "inline";
-  }
+      //visibility based on admin and user
+      $display = "none";
+      if (json_decode($_COOKIE["user_data"])[3] === "admin") {
+         $display = "inline";
+      }
 
-  echo '
+      echo '
      <div class="box pb-2 mx-1 my-2">
       <br />
      <div class="bookImg">
@@ -39,11 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
           onclick="edit(' . $id . ', event)" >
           <i class="fa fa-pencil" aria-hidden="true"></i> Edit
        </div>
-       <div class="edit_cont px-2 d-' . $display . '" onclick="Delete('.$id.')">
+       <div class="edit_cont px-2 d-' . $display . '" onclick="Delete(' . $id . ')">
            <i class="fa fa-trash" aria-hidden="true"></i> Delete
        </div>
        <div
-         class="edit_cont px-2 d-' .(json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none': 'inline'). '"
+         class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '"
       >
            <i class="fa fa-rocket" aria-hidden="true"></i> Issue
        </div>
@@ -53,5 +57,5 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       </div>
      </div>
     ';
- }
+   }
 }
