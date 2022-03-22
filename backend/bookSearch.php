@@ -3,7 +3,7 @@ include 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $keyword = $_POST["data"];
-   $query = "SELECT * FROM books WHERE name LIKE '$keyword%'";
+   $query = "SELECT * FROM books WHERE name LIKE '%$keyword%'";
    $res = mysqli_query($con, $query) or die(mysqli_error($con));
    while ($row = mysqli_fetch_assoc($res)) {
       //data
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
 
       echo '
-     <div class="box pb-2 mx-1 my-2">
+     <div class="box pb-2 mx-1 my-2"  id=' . $id . '>
       <br />
      <div class="bookImg">
        <img src=' . $src . ' class="img-fluid" />

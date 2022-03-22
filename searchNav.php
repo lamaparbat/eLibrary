@@ -21,16 +21,33 @@
 <!-- custom js script -->
 <script>
  $("#searchbar").on("keyup", (e) => {
+  //get the endpoints
+  let endpoint = window.location.href.split("/")[4]
+
   //sending keyword to backend for live searching
-  $.ajax({
-   url: "./backend/bookSearch.php",
-   type: "POST",
-   data: {
-    data: e.target.value
-   },
-   success: function(data) {
-    $(".boxCont").html(data);
-   }
-  })
+  if (endpoint === "members.php") {
+   $.ajax({
+    url: "./backend/memberSearch.php",
+    type: "POST",
+    data: {
+     data: e.target.value
+    },
+    success: function(data) {
+     $(".boxCont").html(data);
+    }
+   })
+  } else if (endpoint === "books.php") {
+   $.ajax({
+    url: "./backend/bookSearch.php",
+    type: "POST",
+    data: {
+     data: e.target.value
+    },
+    success: function(data) {
+     $(".boxCont").html(data);
+    }
+   })
+  }
+
  })
 </script>

@@ -12,9 +12,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       if (strlen($row["author"]) > 14) {
          $author = substr($row["author"], 0, 15) . "..";
       } else {
-         $author = $row["author"];
+         $author = $row["author"]."....";
       }
-      $category = $row["category"];
+      if (strlen($row["category"]) > 14) {
+         $category = substr($row["category"], 0, 15) . "..";
+      } else {
+         $category = $row["category"] . "....";
+      }
       $published = $row["published"];
       $src = 'backend/books_img/' . $row["src"];
 
@@ -25,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       }
 
       echo '
-     <div class="box pb-2 mx-1 my-2">
+     <div class="box pb-2 mx-1 my-2" id='.$id.'>
       <br />
      <div class="bookImg">
        <img src=' . $src . ' class="img-fluid" />

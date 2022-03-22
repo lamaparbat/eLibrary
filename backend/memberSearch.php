@@ -1,38 +1,38 @@
 <?php
 include 'connection.php';
 
-$query = "SELECT * FROM members";
-$res = mysqli_query($con, $query) or die(mysqli_error($con));
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   $keyword = $_POST["data"];
+   $query = "SELECT * FROM members WHERE name LIKE '%$keyword%'";
+   $res = mysqli_query($con, $query) or die(mysqli_error($con));
+   while ($row = mysqli_fetch_assoc($res)) {
+      //data
+      $id = $row["id"];
+      $name = $row["name"];
+      if (strlen($row["name"]) > 14) {
+         $author = substr($row["name"], 0, 15) . "..";
+      } else {
+         $author = $row["name"] . "....";
+      }
+      if (strlen($row["email"]) > 14) {
+         $email = substr($row["email"], 0, 15) . "..";
+      } else {
+         $email = $row["email"] . "....";
+      }
+      $phone = $row["phone"];
+      $src = 'backend/uploads/' . $row["profile"];
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
- while ($row = mysqli_fetch_assoc($res)) {
-  //data
-  $id = $row["id"];
-  $name = $row["name"];
-  if (strlen($row["name"]) > 14) {
-   $author = substr($row["name"], 0, 15) . "..";
-  } else {
-   $author = $row["name"]."....";
-  }
-  if (strlen($row["email"]) > 14) {
-   $email = substr($row["email"], 0, 15) . "..";
-  } else {
-   $email = $row["email"] . "....";
-  }
-  $phone = $row["phone"];
-  $src = 'backend/uploads/'.$row["profile"];
+      //visibility based on admin and user
+      $display = "none";
+      if (json_decode($_COOKIE["user_data"])[3] === "admin") {
+         $display = "inline";
+      }
 
-  //visibility based on admin and user
-  $display = "none";
-  if (json_decode($_COOKIE["user_data"])[3] === "admin") {
-   $display = "inline";
-  }
-
-  echo '
-     <div class="box pb-2 mx-1 my-2"  id=' . $id . '>
+      echo '
+     <div class="box pb-2 mx-1 my-2"  id=' . $id . '> 
       <br />
      <div class="bookImg">
-       <img src='. $src . ' class="img-fluid" />
+       <img src=' . $src . ' class="img-fluid" />
      </div>
       <div class="body">
        <h5 class="mx-3 my-2"><b>' . $name . '</b></h5>
@@ -60,5 +60,5 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       </div>
      </div>
     ';
- }
+   }
 }
