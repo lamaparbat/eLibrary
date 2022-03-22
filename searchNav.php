@@ -9,7 +9,7 @@
   </div>
   <div>
    <i class="fa fa-search px-3" aria-hidden="true"></i>
-   <input type="search" id="searchbar" class="form-control shadow-0 rounded-0" placeholder="Enter Book name" />
+   <input type="search" id="searchbar" class="form-control shadow-0 rounded-0" placeholder="Enter keyword" />
   </div>
  </div>
 </div><br /><br /><br />
