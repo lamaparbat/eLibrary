@@ -63,6 +63,7 @@
               </div>
               <input type="file" class="form-control shadow-0 rounded-0" name="profile" id="img" />
             </div>
+            <input type="hidden" value="" name="data_id" id="data_id" />
             <input type="submit" name="submit" value="Create" class="btn btn-primary mt-1 px-5 rounded-0" onclick="updateComplete()" />
             <a class="btn btn-danger mt-1 px-5 rounded-0 cancelBtn" onclick="hideSidebar()">Cancel</a>
           </form>
@@ -133,15 +134,16 @@
     const cardObj = event.currentTarget.parentElement.parentElement
     const cardDesc = event.currentTarget.parentElement.parentElement.children[2]
     const src = cardObj.children[1].children[0].src
-    const title = cardDesc.children[0].innerText
-    const email = cardDesc.children[1].innerText
-    const phone = cardObj.children[2].children[2].innerText
+    const title = cardDesc.children[0].children[0].innerText
+    const email = cardDesc.children[1].children[0].innerText
+    const phone = cardObj.children[2].children[2].children[0].innerText
 
     // change the btn value to update
     $(".members .sidebar form").children().toArray()[10].value = "Update";
     $(".members .sidebar").children().toArray()[2].action = "./backend/updateBooks.php";
 
     //loading the field value to the sidebar form
+    $(".members .sidebar form #data_id").val(cardObj.id)
     $(".members .sidebar form div").children().toArray()[1].value = title
     $(".members .sidebar form div").children().toArray()[4].value = email
     $(".members .sidebar form div #img").attr("src", src)
