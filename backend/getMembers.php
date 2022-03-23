@@ -9,16 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   //data
   $id = $row["id"];
   $name = $row["name"];
-  if (strlen($row["name"]) > 14) {
-   $author = substr($row["name"], 0, 15) . "..";
-  } else {
-   $author = $row["name"]."....";
-  }
-  if (strlen($row["email"]) > 14) {
-   $email = substr($row["email"], 0, 15) . "..";
-  } else {
-   $email = $row["email"] . "....";
-  }
+  $email = $row["email"];
   $phone = $row["phone"];
   $src = 'backend/uploads/'.$row["profile"];
 

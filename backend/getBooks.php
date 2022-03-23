@@ -9,19 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       //data
       $id = $row["id"];
       $name = $row["name"];
-      if (strlen($row["author"]) > 14) {
-         $author = substr($row["author"], 0, 15) . "..";
-      } else {
-         $author = $row["author"]."....";
-      }
-      if (strlen($row["category"]) > 14) {
-         $category = substr($row["category"], 0, 15) . "..";
-      } else {
-         $category = $row["category"] . "....";
-      }
       $published = $row["published"];
       $src = 'backend/books_img/' . $row["src"];
-
+      $category = $row["category"];
+      $author = $row["author"];
       //visibility based on admin and user
       $display = "none";
       if (json_decode($_COOKIE["user_data"])[3] === "admin") {

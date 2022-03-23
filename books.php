@@ -53,7 +53,7 @@
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-book" aria-hidden="true" id="passwordIcon"></i>
               </div>
-              <select class="form-control" name="book_category">
+              <select class="form-control" name="book_category" id="book_category">
                 <option value="History">History</option>
                 <option value="Physics">Physics</option>
                 <option value="Geography">Geography</option>
@@ -69,15 +69,16 @@
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-calendar-o" aria-hidden="true" id="passwordIcon"></i>
               </div>
-              <input type="date" class="form-control shadow-0 rounded-0" name="book_published" id="uname" />
+              <input type="date" class="form-control shadow-0 rounded-0 published" name="book_published" value="" id="uname" />
             </div>
             <span>upload cover picture</span>
             <div class="d-flex mt-2 mb-4">
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-picture-o" aria-hidden="true" id="img"></i>
               </div>
-              <input type="file" class="form-control shadow-0 rounded-0" name="book_img" id="img" />
+              <input type="file" class="form-control shadow-0 rounded-0" name="book_img" id="book_img" />
             </div>
+            <input type="hidden" value="" name="data_id" id="data_id" />
             <input type="submit" name="submit" value="Create" class="btn btn-primary mt-1 px-5 rounded-0" onclick="updateComplete()" />
             <a class="btn btn-danger mt-1 px-5 rounded-0 cancelBtn" onclick="hideSidebar()">Cancel</a>
           </form>
@@ -148,19 +149,19 @@
     const cardDesc = event.currentTarget.parentElement.parentElement.children[2]
     const src = cardObj.children[1].children[0].src;
     const title = cardDesc.children[0].innerText
-    const author = cardDesc.children[1].innerText
-    const category = cardDesc.children[2].innerText
-    const published = cardDesc.children[3].innerText
+    const author = cardDesc.children[1].children[0].innerText
+    const category = cardDesc.children[2].children[0].innerText
+    const published = cardDesc.children[3].children[0].innerText
 
     // change the btn value to update
-    $(".members .sidebar form").children().toArray()[10].value = "Update";
+    $(".members .sidebar form").children().toArray()[11].value = "Update";
     $(".members .sidebar").children().toArray()[2].action = "./backend/updateBooks.php";
 
     //loading the field value to the sidebar form
+    $(".members .sidebar form #data_id").val(cardObj.id)
     $(".members .sidebar form div").children().toArray()[1].value = title
     $(".members .sidebar form div").children().toArray()[4].value = author
-    $(".members .sidebar form div").children().toArray()[7].children[0].innerText = category
-    $(".members .sidebar form div").children().toArray()[13].src = src
+    $(".members .sidebar form div #book_img").attr("src", src)
 
     // hide window based on width size
     if (window.innerWidth < 1090) {
