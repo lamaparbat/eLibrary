@@ -54,7 +54,7 @@
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-phone" aria-hidden="true" id="emailIcon"></i>
               </div>
-              <input type="text" class="form-control shadow-0 rounded-0 phonenum" placeholder="+977" name="phone" id="uname" />
+              <input type="text" class="form-control shadow-0 rounded-0 phoneNum" placeholder="+977" name="phone" id="uname" />
             </div>
             <span>Upload Profile picture</span>
             <div class="d-flex mt-2 mb-4">
@@ -145,7 +145,7 @@
     $(".members .sidebar form div").children().toArray()[1].value = title
     $(".members .sidebar form div").children().toArray()[4].value = email
     $(".members .sidebar form div #img").attr("src", src)
-    $(".members .sidebar form div .phonenum").innerText = phone
+    $(".members .sidebar form div .phoneNum").val(phone)
 
     // hide window based on width size
     if (window.innerWidth < 1090) {
