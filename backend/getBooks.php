@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       }
 
       echo '
-     <div class="box pb-2 mx-1 my-2" id='.$id.'>
+     <div class="box pb-2 mx-1 my-2" id=' . $id . '>
       <br />
      <div class="bookImg">
        <img src=' . $src . ' class="img-fluid" />
@@ -38,18 +38,21 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
           onclick="edit(' . $id . ', event)" >
           <i class="fa fa-pencil" aria-hidden="true"></i> Edit
        </div>
+         <div class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '">
+           <i class="fa fa-rocket" aria-hidden="true"></i> Issue
+         </div>
        <div class="edit_cont px-2 d-' . $display . '" onclick="Delete(' . $id . ')">
            <i class="fa fa-trash" aria-hidden="true"></i> Delete
-       </div>
-       <div
-         class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '"
-      >
-           <i class="fa fa-rocket" aria-hidden="true"></i> Issue
        </div>
        <div class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '">
           <i class="fa fa-info-circle" aria-hidden="true"></i> Details
        </div>
       </div>
+      <center>
+         <div class="issue_btn px-2 d-' . (json_decode($_COOKIE["user_data"])[3] != 'admin' ? 'none' : 'inline') . '">
+           <i class="fa fa-rocket" aria-hidden="true"></i> Issue
+         </div>
+      </center>
      </div>
     ';
    }
