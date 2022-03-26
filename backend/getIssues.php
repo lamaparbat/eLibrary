@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
        <span class="mx-3">Deadline: <font class="bg-danger text-light" id="value">' . $deadline . '</font></span>
       </div>
       <div class="d-flex justify-content-around footer">
-       <div class="edit_cont px-2" onclick="returnBook('.$id.',' . $book_id . ', `' . $bookname . '`, `' . $user_email . '`, `' . $username . '`)"><i class="fa fa-pencil" aria-hidden="true"></i> Returned</div>
+       <div class="edit_cont px-2" onclick="returnBook('.$id.',' . $book_id . ', `' . $bookname . '`, `' . $user_email . '`, `' . $username . '`,`'.$row['src'].'`)"><i class="fa fa-pencil" aria-hidden="true"></i> Returned</div>
        <div class="edit_cont px-2" onclick="deleteIssue(' . $id . ')"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>
       </div><br/>
      </div>

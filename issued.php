@@ -90,8 +90,7 @@
   })
 
   //return book
-  function returnBook(issue_id, book_id, bookname, user_email, username) {
-   console.log(book_id + " " + bookname + " " + user_email + " " + username)
+  function returnBook(issue_id, book_id, bookname, user_email, username,src) {
    $.ajax({
     type: "POST",
     url: "./backend/returnBook.php",
@@ -100,7 +99,8 @@
      book_id: book_id,
      bookname: `${bookname}`,
      user_email: `${user_email}`,
-     username: `${username}`
+     username: `${username}`,
+     src:`${src}`
     },
     success: function(data) {
      if (data == "success") {

@@ -7,10 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  $bookname = $_POST["bookname"];
  $user_email = $_POST["user_email"];
  $username = $_POST["username"];
+ $src = $_POST["src"];
  $date = date("Y/m/d");
  // echo $book_id." ". $bookname . " " . $user_email . " " .$username." ".$date." ";
 
- $query = "INSERT INTO returned(username, user_email, bookname, book_id, date) VALUES('$username','$user_email','$bookname','$book_id', '$date')";
+ $query = "INSERT INTO returned(username, user_email, bookname, book_id, date,src) VALUES('$username','$user_email','$bookname','$book_id', '$date', '$src')";
 
  if(mysqli_query($con, $query) or die(mysqli_error($con))){
      $query = "DELETE FROM issued WHERE id=$issue_id";
