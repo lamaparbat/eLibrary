@@ -186,6 +186,27 @@
     })
   }
 
+  //issue books
+  function Issue(id) {
+    $.ajax({
+      type: "POST",
+      url: "./backend/issueBook.php",
+      data: {
+        book_id: id
+      },
+      success: function(data) {
+        if (data === "success") {
+          alert("Book successfully issued");
+        } else {
+          alert("500!!.  Failed to issue book !!");
+        }
+      },
+      error: function() {
+        alert("404!!. Client side error !!")
+      }
+    })
+  }
+
   // search books response
   $.ajax({
     type: "GET",

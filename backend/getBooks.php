@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
        </div>
       </div>
       <center>
-         <div class="issue_btn px-2 d-' . (json_decode($_COOKIE["user_data"])[3] != 'admin' ? 'none' : 'inline') . '">
+         <div class="issue_btn px-2 d-' . (json_decode($_COOKIE["user_data"])[3] != 'admin' ? 'none' : 'inline') . '" onclick="Issue(' . $id . ')">
            <i class="fa fa-rocket" aria-hidden="true"></i> Issue
          </div>
       </center>
