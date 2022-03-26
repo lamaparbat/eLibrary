@@ -88,6 +88,35 @@
     $(".col-sm-8 .boxCont").html(data);
    }
   })
+
+  //return book
+  function returnBook(issue_id, book_id, bookname, user_email, username) {
+   console.log(book_id + " " + bookname + " " + user_email + " " + username)
+   $.ajax({
+    type: "POST",
+    url: "./backend/returnBook.php",
+    data: {
+     issue_id:issue_id,
+     book_id: book_id,
+     bookname: `${bookname}`,
+     user_email: `${user_email}`,
+     username: `${username}`
+    },
+    success: function(data) {
+     if (data == "success") {
+      alert("successfully returned book")
+      location.assign("")
+     } else {
+      alert("500 !! failed to return book")
+     }
+    }
+   })
+  }
+
+  //delete issued book
+  function deleteIssue(id) {
+   alert(id)
+  }
  </script>
 </body>
 
