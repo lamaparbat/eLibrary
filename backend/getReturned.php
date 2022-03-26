@@ -31,8 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
          <span class="mx-3">Returned: <font class="px-2 bg-success text-light" id="value"><i class="fa fa-check" aria-hidden="true"></i></font></span>
          </div>
          <div class="d-flex justify-content-around footer">
-         <div class="edit_cont px-2"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</div>
-         <div class="edit_cont px-2"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>
+         <div class="edit_cont bg-danger text-light px-2 py-1 w-75 d-flex justify-content-center align-items-center"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; Delete</div>
          </div>
       </div>
 
