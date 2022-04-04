@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +21,7 @@
 
   <!-- body -->
   <!-- create course -->
-  <?php include 'createCourse.php'; ?>
+  <?php include 'createBook.php'; ?>
   <br />
   <div class="container-fluid members mt-5">
     <div class="rows">
@@ -75,7 +74,7 @@
       if (json_decode($_COOKIE["user_data"])[3] != "admin") {
       ?>
         <!-- scrollable member list -->
-        <div class="px-3 data bg-text-dark">
+        <div class="container px-3 data bg-text-dark">
           <?php include 'searchNav.php' ?>
           <div class="boxCont d-flex text-dark">
             Data fetching .......

@@ -22,14 +22,14 @@
 
  <!-- body -->
  <!-- create course -->
- <?php include 'createCourse.php'; ?>
+ <?php include 'createBook.php'; ?>
  <br />
  <div class="container members mt-5">
   <div class="row">
    <!-- scrollable member list -->
-   <div class="col-sm-8 px-3 data bg- text-dark">
+   <div class="container col-sm-8 px-3 data text-dark">
     <?php include 'searchNav.php' ?>
-    <div class="boxCont d-flex text-dark">
+    <div class="boxCont d-flex justify-content-center text-dark">
      data fetching.......
     </div>
    </div>

@@ -22,7 +22,7 @@
 
   <!-- body -->
   <!-- create course -->
-  <?php include 'createCourse.php'; ?>
+  <?php include 'createBook.php'; ?>
   <br />
   <div class="container-fluid members mt-5">
     <div class="rows">
@@ -59,7 +59,7 @@
       if (json_decode($_COOKIE["user_data"])[3] != "admin") {
       ?>
         <!-- scrollable member list -->
-        <div class="px-3 data bg-text-dark">
+        <div class="container px-3 data bg-text-dark">
           <?php include 'searchNav.php' ?>
           <div class="boxCont d-flex text-dark">
             Data fetching .......
@@ -158,6 +158,11 @@
 
   //issue books
   function Issue(id) {
+    alert(id + " issue admin")
+  }
+  //issue books
+  function Reserve(id) {
+    alert(id + " Reserve user")
     $.ajax({
       type: "POST",
       url: "./backend/issueBook.php",
@@ -166,9 +171,9 @@
       },
       success: function(data) {
         if (data === "success") {
-          alert("Book successfully issued");
+          alert("Book successfully reserved");
         } else {
-          alert("500!!.  Failed to issue book !!");
+          alert("500!!.  Failed to reserved book !!");
         }
       },
       error: function() {

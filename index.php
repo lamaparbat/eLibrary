@@ -24,7 +24,7 @@
  <?php include 'profile_nav.php'; ?>
 
  <!-- create course -->
- <?php include 'createCourse.php'; ?>
+ <?php include 'createBook.php'; ?>
 
  <br /><br /><br />
  <!-- ****** body  ****** -->
