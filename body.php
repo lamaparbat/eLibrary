@@ -22,7 +22,7 @@
 
   <div class="box3">
    <div class="d-flex justify-content-between">
-    <span>Reserve Books</span>
+    <span>Reserved Books</span>
     <i class="fa fa-ellipsis-h mt-1" aria-hidden="true"></i>
    </div>
    <div class="body pt-3">

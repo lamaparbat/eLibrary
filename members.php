@@ -33,21 +33,21 @@
         <div class="p-4 sidebar bg-light text-dark">
           <h5 id="title">Insert a new Member</h5>
           <hr class="mt-1" />
-          <form action="./backend/createMember.php" class="pt-0" method="post" enctype="multipart/form-data" onsubmit="sendMemberData()">
+          <form action="./backend/createMember.php" class="pt-0" method="post" enctype="multipart/form-data" onsubmit="sendMemberData(event)" onchange="formdataChange()">
             <input type="hidden" name="id" id="data_id" value="" />
             <span>Enter name</span>
             <div class="d-flex mt-2 mb-4">
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-user" aria-hidden="true" id="userIcon"></i>
               </div>
-              <input type="text" class="form-control shadow-0 rounded-0" name="member_name" id="uname" />
+              <input type="text" class="form-control shadow-0 rounded-0 uname" name="member_name" id="uname" />
             </div>
             <span>Enter Email</span>
             <div class="d-flex mt-2 mb-4">
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-envelope" aria-hidden="true" id="emailIcon"></i>
               </div>
-              <input type="text" class="form-control shadow-0 rounded-0" placeholder="abc@gmail.com" name="email" id="uname" />
+              <input type="text" class="form-control shadow-0 rounded-0 email" placeholder="abc@gmail.com" name="email" id="uname" />
             </div>
             <span>Enter Phone number</span>
             <div class="d-flex mt-2 mb-4">
@@ -61,10 +61,11 @@
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-picture-o" aria-hidden="true" id="img"></i>
               </div>
-              <input type="file" class="form-control shadow-0 rounded-0" name="profile" id="img" />
+              <input type="file" class="form-control shadow-0 rounded-0 profile" name="profile" id="img" />
             </div>
             <input type="hidden" value="" name="data_id" id="data_id" />
-            <input type="submit" name="submit" value="Create" class="btn btn-primary mt-1 px-5 rounded-0" onclick="updateComplete()" />
+            <span class="text-danger errorSpan"></span><br />
+            <input type="submit" name="submit" value="Create" class="btn btn-primary px-5 rounded-0" id="createMemberBtn" onclick="updateComplete()" />
             <a class="btn btn-danger mt-1 px-5 rounded-0 cancelBtn" onclick="hideSidebar()">Cancel</a>
           </form>
         </div>
@@ -103,6 +104,30 @@
 
 <!-- fetching books from server -->
 <script>
+  $("#createMemberBtn").prop("disabled", true)
+
+  function formdataChange() {
+    const memberName = $(".uname").val()
+    const email = $(".email").val()
+    const phone = parseInt($(".phoneNum").val())
+    const profile = $(".profile").val()
+    console.log(memberName + " " + email + " " + phone + " ")
+    console.log(profile);
+    if (memberName && profile && email && phone) {
+      if (email.indexOf("@") > 0 && email.indexOf("gmail") > 0 && email.indexOf(".com") > 0) {
+        if (Number.isInteger(phone)) {
+          $("#createMemberBtn").prop("disabled", false)
+          $(".errorSpan").text("")
+        } else {
+          $(".errorSpan").text("Enter a correct phone number format !!")
+        }
+      } else {
+        $(".errorSpan").text("Please type a correct email format !!")
+      }
+    } else {
+      $(".errorSpan").text("Please fill the all field values !")
+    }
+  }
   // hide the sidebar form 
   function hideSidebar() {
     if ($(".members .sidebar").css("display") == "none") {
@@ -114,10 +139,8 @@
     }
   }
 
-  //send member data to backend
-  function sendMemberData(event){
-       event.preventDefault()
-       console.log(event.target)
+  function sendMemberData(event) {
+
   }
 
   // display cancel btn based on width
