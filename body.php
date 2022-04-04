@@ -20,6 +20,23 @@
    </div>
   </div>
 
+  <div class="box3">
+   <div class="d-flex justify-content-between">
+    <span>Reserve Books</span>
+    <i class="fa fa-ellipsis-h mt-1" aria-hidden="true"></i>
+   </div>
+   <div class="body pt-3">
+    <span>1201</span><br />
+    <h6>Total Books available</h6>
+    <p>From 2018 - 2020</p>
+   </div>
+   <div class="footer d-flex justify-content-end">
+    <div>
+     <i class="fa fa-folder-open" aria-hidden="true"></i>
+    </div>
+   </div>
+  </div>
+
   <div class="box2">
    <div class="d-flex justify-content-between">
     <span>Issued</span>
@@ -97,23 +114,6 @@
    <div class="body pt-3">
     <span>32001</span><br />
     <h6>Total Books users</h6>
-    <p>From 2018 - 2020</p>
-   </div>
-   <div class="footer d-flex justify-content-end">
-    <div>
-     <i class="fa fa-folder-open" aria-hidden="true"></i>
-    </div>
-   </div>
-  </div>
-
-  <div class="box3">
-   <div class="d-flex justify-content-between">
-    <span>Books</span>
-    <i class="fa fa-ellipsis-h mt-1" aria-hidden="true"></i>
-   </div>
-   <div class="body pt-3">
-    <span>1201</span><br />
-    <h6>Total Books available</h6>
     <p>From 2018 - 2020</p>
    </div>
    <div class="footer d-flex justify-content-end">
