@@ -27,7 +27,7 @@
    </div>
    <div class="body pt-3">
     <span>1201</span><br />
-    <h6>Total Books available</h6>
+    <h6>Total Books reserved</h6>
     <p>From 2018 - 2020</p>
    </div>
    <div class="footer d-flex justify-content-end">
@@ -125,12 +125,12 @@
 
   <div class="box4">
    <div class="d-flex justify-content-between">
-    <span>Books</span>
+    <span>Fined Users</span>
     <i class="fa fa-ellipsis-h mt-1" aria-hidden="true"></i>
    </div>
    <div class="body pt-3">
     <span>1201</span><br />
-    <h6>Total Books available</h6>
+    <h6>Total Fined users</h6>
     <p>From 2018 - 2020</p>
    </div>
    <div class="footer d-flex justify-content-end">

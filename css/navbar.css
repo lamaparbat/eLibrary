@@ -58,7 +58,7 @@
 .sidenav a:hover {
   padding-left: 50px;
   color: black;
-  background-color: rgb(231, 231, 231);
+  background-color: unset !important;
 }
 
 /* Position and style the close button (top right corner) */
