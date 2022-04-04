@@ -26,38 +26,6 @@
  <br />
  <div class="container members mt-5">
   <div class="row">
-
-   <!-- sidebar navigation -->
-   <div class="col-sm-4 p-5 sidebar bg-light text-dark">
-    <h5 id="title">Book Issued Details</h5>
-    <hr class="mt-1" />
-    <form class="pt-0" method="post" enctype="multipart/form-data">
-     <span>Enter Book name</span>
-     <div class="d-flex mt-2 mb-4">
-      <div class="icon_cont px-3 py-1 bg-light">
-       <i class="fa fa-book" aria-hidden="true" id="userIcon"></i>
-      </div>
-      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter book name" name="book" id="uname" />
-     </div>
-     <span>Enter user name</span>
-     <div class="d-flex mt-2 mb-4">
-      <div class="icon_cont px-3 py-1 bg-light">
-       <i class="fa fa-user" aria-hidden="true" id="userIcon"></i>
-      </div>
-      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter username" name="uname" id="uname" />
-     </div>
-     <span>Enter your email address</span>
-     <div class="d-flex mt-2 mb-4">
-      <div class="icon_cont px-3 py-1 bg-light">
-       <i class="fa fa-envelope" aria-hidden="true" id="emailIcon"></i>
-      </div>
-      <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter your username" name="email" id="uname" />
-     </div>
-
-     <input type="submit" name="submit" value="ADD USER" class="btn btn-primary mt-1 px-5 rounded-0" />
-    </form>
-   </div>
-
    <!-- scrollable member list -->
    <div class="col-sm-8 px-3 data bg- text-dark">
     <?php include 'searchNav.php' ?>

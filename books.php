@@ -31,52 +31,22 @@
       if (json_decode($_COOKIE["user_data"])[3] === "admin") {
       ?>
         <div class="p-4 sidebar bg-light text-dark">
-          <h5 id="title">Insert a new Book</h5>
+          <h5 id="title">Issue Book</h5>
           <hr class="mt-1" />
           <form action="./backend/createBooks.php" class="pt-0" method="post" enctype="multipart/form-data">
-            <span>Enter Book name</span>
+            <span>Enter Book ID</span>
             <div class="d-flex mt-2 mb-4">
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-user" aria-hidden="true" id="userIcon"></i>
               </div>
               <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter book name" name="book_name" id="uname" />
             </div>
-            <span>Enter Author name</span>
-            <div class="d-flex mt-2 mb-4">
-              <div class="icon_cont px-3 py-1 bg-light">
-                <i class="fa fa-envelope" aria-hidden="true" id="emailIcon"></i>
-              </div>
-              <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter author name" name="book_author" id="uname" />
-            </div>
-            <span>Enter book category</span>
-            <div class="d-flex mt-2 mb-4">
-              <div class="icon_cont px-3 py-1 bg-light">
-                <i class="fa fa-book" aria-hidden="true" id="passwordIcon"></i>
-              </div>
-              <select class="form-control" name="book_category" id="book_category">
-                <option value="History">History</option>
-                <option value="Physics">Physics</option>
-                <option value="Geography">Geography</option>
-                <option value="Computer Science">Computer Science</option>
-                <option value="Biology">Biology</option>
-                <option value="Chemistry">Chemistry</option>
-                <option value="Literature">Literature</option>
-                <option value="Literature">Romantic</option>
-              </select>
-            </div>
-            <span>Enter published date</span>
+            <span>Enter user email</span>
             <div class="d-flex mt-2 mb-4">
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-calendar-o" aria-hidden="true" id="passwordIcon"></i>
               </div>
-              <input type="date" class="form-control shadow-0 rounded-0 published" name="book_published" value="" id="uname" />
-            </div>
-            <span>upload cover picture</span>
-            <div class="d-flex mt-2 mb-4">
-              <div class="icon_cont px-3 py-1 bg-light">
-                <i class="fa fa-picture-o" aria-hidden="true" id="img"></i>
-              </div>
-              <input type="file" class="form-control shadow-0 rounded-0" name="book_img" id="book_img" />
+              <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter rack number" name="book_name" id="uname" />
             </div>
             <input type="hidden" value="" name="data_id" id="data_id" />
             <input type="submit" name="submit" value="Create" class="btn btn-primary mt-1 px-5 rounded-0" onclick="updateComplete()" />

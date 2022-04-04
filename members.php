@@ -33,7 +33,7 @@
         <div class="p-4 sidebar bg-light text-dark">
           <h5 id="title">Insert a new Member</h5>
           <hr class="mt-1" />
-          <form action="./backend/createMember.php" class="pt-0" method="post" enctype="multipart/form-data">
+          <form action="./backend/createMember.php" class="pt-0" method="post" enctype="multipart/form-data" onsubmit="sendMemberData()">
             <input type="hidden" name="id" id="data_id" value="" />
             <span>Enter name</span>
             <div class="d-flex mt-2 mb-4">
@@ -114,6 +114,12 @@
     }
   }
 
+  //send member data to backend
+  function sendMemberData(event){
+       event.preventDefault()
+       console.log(event.target)
+  }
+
   // display cancel btn based on width
   if (window.innerWidth > 1090) {
     $(".cancelBtn").hide();
@@ -157,21 +163,23 @@
 
 
   function Delete(id) {
-    confirm("Are you sure want to delete ", id);
-    $.ajax({
-      type: "POST",
-      url: "./backend/deleteMember.php",
-      data: {
-        id: id
-      },
-      success: function(data) {
-        alert(data)
-        location.assign("http://localhost/eLibrary/members.php")
-      },
-      error: function() {
-        alert("Failed to delete !!")
-      }
-    })
+    const res = confirm("Are you sure want to delete ", id);
+    if (res) {
+      $.ajax({
+        type: "POST",
+        url: "./backend/deleteMember.php",
+        data: {
+          id: id
+        },
+        success: function(data) {
+          alert(data)
+          location.assign("http://localhost/eLibrary/members.php")
+        },
+        error: function() {
+          alert("Failed to delete !!")
+        }
+      })
+    }
   }
 
   // search books response
