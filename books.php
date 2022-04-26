@@ -33,23 +33,23 @@
         <div class="p-4 sidebar bg-light text-dark">
           <h5 id="title">Issue Book</h5>
           <hr class="mt-1" />
-          <form action="./backend/createBooks.php" class="pt-0" method="post" enctype="multipart/form-data">
+          <form action="./backend/issueBook.php" class="pt-0" method="post" enctype="multipart/form-data">
             <span>Enter Book ID</span>
             <div class="d-flex mt-2 mb-4">
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-user" aria-hidden="true" id="userIcon"></i>
               </div>
-              <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter book name" name="book_name" id="uname" />
+              <input type="number" class="form-control shadow-0 rounded-0" placeholder="Enter book id" name="book_id" id="uname" required/>
             </div>
-            <span>Enter user email</span>
+            <span>Enter email ID</span>
             <div class="d-flex mt-2 mb-4">
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-calendar-o" aria-hidden="true" id="passwordIcon"></i>
               </div>
-              <input type="text" class="form-control shadow-0 rounded-0" placeholder="Enter rack number" name="book_name" id="uname" />
+              <input type="email" class="form-control shadow-0 rounded-0" placeholder="abc@gmail.com" name="user_email" id="uname" />
             </div>
             <input type="hidden" value="" name="data_id" id="data_id" />
-            <input type="submit" name="submit" value="Create" class="btn btn-primary mt-1 px-5 rounded-0" onclick="updateComplete()" />
+            <input type="submit" name="submit" value="Issue Book" class="btn btn-primary mt-1 px-5 rounded-0" onclick="updateComplete()" required />
             <a class="btn btn-danger mt-1 px-5 rounded-0 cancelBtn" onclick="hideSidebar()">Cancel</a>
           </form>
         </div>

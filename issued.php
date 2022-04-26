@@ -58,17 +58,17 @@
   })
 
   //return book
-  function returnBook(issue_id, book_id, bookname, user_email, username,src) {
+  function returnBook(issue_id, book_id, bookname, user_email, username, src) {
    $.ajax({
     type: "POST",
     url: "./backend/returnBook.php",
     data: {
-     issue_id:issue_id,
+     issue_id: issue_id,
      book_id: book_id,
      bookname: `${bookname}`,
      user_email: `${user_email}`,
      username: `${username}`,
-     src:`${src}`
+     src: `${src}`
     },
     success: function(data) {
      if (data == "success") {
@@ -83,7 +83,19 @@
 
   //delete issued book
   function deleteIssue(id) {
-   alert(id)
+   $.ajax({
+    type: "POST",
+    url: "./backend/deleteIssuedBook.php",
+    data: {
+     id: id
+    },
+    success: function(data) {
+     location.assign("http://localhost/eLibrary/issued.php")
+    },
+    error: function() {
+     alert("Failed to delete !!")
+    }
+   })
   }
  </script>
 </body>

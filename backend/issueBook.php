@@ -1,28 +1,33 @@
 <?php
 include 'connection.php';
 
-
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  $book_id = $_POST["book_id"];
- $user_email = json_decode($_COOKIE["user_data"])[0];
- $username = json_decode($_COOKIE["user_data"])[1];
+ $user_email = $_POST["user_email"];
  $issue_date = explode("/", date("Y/m/d"));
  $deadline = $issue_date[0] . "/" . ($issue_date[1] + 1) . "/" . $issue_date[2];
  $issue_date = $issue_date[0] . "/" . $issue_date[1] . "/" . $issue_date[2];
 
- //search books and get book details
- $query = "SELECT * FROM books WHERE id=$book_id";
- $result = mysqli_query($con, $query) or die(mysqli_error($con));
-  while ($row = mysqli_fetch_assoc($result)) {
-    $book_name = $row["name"];
-    $src = $row["src"];
-    
-    //insert query
-    $query = "INSERT INTO issued(username, user_email, bookname, book_id, issued_date, deadline,src) VALUES('$username','$user_email','$book_name','$book_id','$issue_date','$deadline','$src')";
-    if(mysqli_query($con, $query) or die(mysqli_error($con))){
-        echo "success";
-    }else{
-       echo "failed";
-   }
-  }
+
+  if (mysqli_num_rows(mysqli_query($con, "SELECT * FROM user WHERE email='$user_email'")) > 0) {
+    //search books and get book details
+    $query = "SELECT * FROM books WHERE id=$book_id";
+    $result = mysqli_query($con, $query) or die(mysqli_error($con));
+    while ($row = mysqli_fetch_assoc($result)) {
+      $book_name = $row["name"];
+      $rack_no = $row["rack_no"];
+      $src = $row["src"];
+
+      //insert query
+      $query = "INSERT INTO issued(user_email, bookname, book_id, issued_date, deadline,src) VALUES('$user_email','$book_name','$book_id','$issue_date','$deadline','$src')";
+      if (mysqli_query($con, $query) or die(mysqli_error($con))) {
+        header("Location:http://localhost/elibrary/issued.php");
+      } else {
+        header("Location:http://localhost/elibrary/books.php");
+      }
+    }
+  } else {
+    echo "User donot exists !! <script>setTimeout(() => location.assign('http://localhost/elibrary/books.php'), 2000)</script>";
+ }
+ 
 }

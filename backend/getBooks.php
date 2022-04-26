@@ -20,13 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       }
 
       echo '
-     <div class="box pb-2 mx-1 my-2" id=' . $id . '>
+     <div class="box pb-2 mx-1 my-2" id=' . $id . ' onclick="issueBook(' . $id . ')">
       <br />
      <div class="bookImg">
        <img src=' . $src . ' class="img-fluid" />
      </div>
       <div class="body">
-       <h5 class="mx-3 my-2"><b>' . $name . '</b></h5>
+       <h5 class="mx-3 my-2">'.$id.' <b>' . $name . '</b></h5>
        <span class="mx-3">Authors: <font id="value">' . $author . '</font></span>
        <span class="mx-3">Category: <font id="value">' . $category . '</font></span>
        <span class="mx-3">Quantity: <font id="value">542 .........</font></span>
