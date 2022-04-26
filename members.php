@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,7 +65,7 @@
             </div>
             <input type="hidden" value="" name="data_id" id="data_id" />
             <span class="text-danger errorSpan"></span><br />
-            <input type="submit" name="submit" value="Create" class="btn btn-primary px-5 rounded-0" id="createMemberBtn" onclick="updateComplete()" />
+            <input type="submit" name="submit" value="Create" class="btn btn-primary px-5 rounded-0" id="createMemberBtn" />
             <a class="btn btn-danger mt-1 px-5 rounded-0 cancelBtn" onclick="hideSidebar()">Cancel</a>
           </form>
         </div>
@@ -103,15 +104,12 @@
 
 <!-- fetching books from server -->
 <script>
-  $("#createMemberBtn").prop("disabled", true)
-
   function formdataChange() {
-    const memberName = $(".uname").val()
-    const email = $(".email").val()
-    const phone = parseInt($(".phoneNum").val())
-    const profile = $(".profile").val()
-    console.log(memberName + " " + email + " " + phone + " ")
-    console.log(profile);
+    const memberName = $(".uname").val();
+    const email = $(".email").val();
+    const phone = parseInt($(".phoneNum").val());
+    const profile = $(".profile").val();
+
     if (memberName && profile && email && phone) {
       if (email.indexOf("@") > 0 && email.indexOf("gmail") > 0 && email.indexOf(".com") > 0) {
         if (Number.isInteger(phone)) {
@@ -127,6 +125,7 @@
       $(".errorSpan").text("Please fill the all field values !")
     }
   }
+
   // hide the sidebar form 
   function hideSidebar() {
     if ($(".members .sidebar").css("display") == "none") {
@@ -136,10 +135,6 @@
       $(".members .rows .data").css("width", "100%")
       $(".members .sidebar").css("display", "none")
     }
-  }
-
-  function sendMemberData(event) {
-
   }
 
   // display cancel btn based on width
@@ -167,7 +162,7 @@
     const phone = cardObj.children[2].children[2].children[0].innerText
 
     // change the btn value to update
-    $(".members .sidebar form").children().toArray()[10].value = "Update";
+    document.querySelector(".members .sidebar form")[6].value = "Update";
     $(".members .sidebar").children().toArray()[2].action = "./backend/updateBooks.php";
 
     //loading the field value to the sidebar form
@@ -181,6 +176,17 @@
     if (window.innerWidth < 1090) {
       hideSidebar()
     }
+  }
+
+  //update the member list
+  function updateComplete() {
+    const isFileEmpty = $(".members .sidebar form #img").val() ? false : true;
+    console.log($(".members .sidebar form #img").val())
+    if (isFileEmpty) {
+      $(".members .sidebar form #img").remove();
+      $(".members .sidebar form #createMemberBtn").click();
+    }
+    return;
   }
 
 
