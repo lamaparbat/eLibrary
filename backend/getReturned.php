@@ -11,6 +11,7 @@ $res = mysqli_query($con, $query) or die(mysqli_error($con));
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
    while ($row = mysqli_fetch_assoc($res)) {
       //data
+      $id = $row["id"];
       $book_id = $row["book_id"];
       $bookname = $row["bookname"];
       $user_email = $row["user_email"];
@@ -31,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
          <span class="mx-3">Returned: <font class="px-2 bg-success text-light" id="value"><i class="fa fa-check" aria-hidden="true"></i></font></span>
          </div>
          <div class="d-flex justify-content-around footer">
-         <div class="edit_cont bg-danger text-light px-2 py-1 w-75 d-flex justify-content-center align-items-center"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; Delete</div>
+         <div class="edit_cont bg-danger text-light px-2 py-1 w-75 d-flex justify-content-center align-items-center" onclick="deleteReturnedBook('.$id.')"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp; Delete</div>
          </div>
       </div>
 
