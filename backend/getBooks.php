@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       $src = 'backend/books_img/' . $row["src"];
       $category = $row["category"];
       $author = $row["author"];
+      $user_email = json_decode($_COOKIE["user_data"])[0];
       //visibility based on admin and user
       $display = "none";
       if (json_decode($_COOKIE["user_data"])[3] === "admin") {
@@ -40,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
           onclick="edit(' . $id . ', event)" >
           <i class="fa fa-pencil" aria-hidden="true"></i> Edit
        </div>
-         <div class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '" onclick="Reserve(' . $id . ')">
+         <div class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '" onclick="Reserve(\'' . $id . '\',\'' . $name . '\',\'' . $user_email . '\',\'' . $src . '\')">
            <i class="fa fa-rocket" aria-hidden="true"></i> Reserve
          </div>
        <div class="edit_cont px-2 d-' . $display . '" onclick="Delete(' . $id . ')">

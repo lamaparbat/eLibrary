@@ -46,6 +46,7 @@ while ($row = mysqli_fetch_assoc($res)) {
     mysqli_query($con, $query) or die(mysqli_error($con));
    }
   }
+
  } else {
   echo intval($split_cur_date[2]) - intval($split_deadline_date[2]) . " day remaining....";
  }

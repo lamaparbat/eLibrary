@@ -8,13 +8,25 @@
    <div id="avatar" class="mt-4 mb-2">
      <img src="./img/avatar.png" height="100%" width="100%" onclick="redirectHomepage()" />
    </div>
-   <span>Admin Panel</span>
+   <span>
+     <?php
+      if ($visible === "block") {
+        echo "Admin Panel";
+        $issue_type = "Issued";
+        $issue_url="issued.php";
+      } else {
+        echo "User Panel";
+        $issue_type = "Reserved";
+        $issue_url = "reserved.php";
+      }
+      ?>
+   </span>
    <hr />
    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
    <a href="index.php"> <i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
    <a href="members.php" class="d-<?php echo $visible; ?>"> <i class="fa fa-users" aria-hidden="true"></i> Members</a>
    <a href="books.php"> <i class="fa fa-book" aria-hidden="true"></i> Books</a>
-   <a href="issued.php" class="d-<?php echo $visible; ?>"> <i class="fa fa-rocket" aria-hidden="true"></i> Issued</a>
+   <a href="<?php echo $issue_url; ?>"> <i class="fa fa-rocket" aria-hidden="true"></i> <?php echo $issue_type; ?></a>
    <a href="returned.php" class="d-<?php echo $visible; ?>"> <i class="fa fa-undo" aria-hidden="true"></i> Returned</a>
    <a href="delay.php" class="d-<?php echo $visible; ?>"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Not Returned</a>
    <a href="setting.php"> <i class="fa fa-cogs" aria-hidden="true"></i> Setting</a>

@@ -39,7 +39,7 @@
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-user" aria-hidden="true" id="userIcon"></i>
               </div>
-              <input type="number" class="form-control shadow-0 rounded-0" placeholder="Enter book id" name="book_id" id="uname" required/>
+              <input type="number" class="form-control shadow-0 rounded-0" placeholder="Enter book id" name="book_id" id="uname" required />
             </div>
             <span>Enter email ID</span>
             <div class="d-flex mt-2 mb-4">
@@ -160,14 +160,17 @@
   function Issue(id) {
     alert(id + " issue admin")
   }
+
   //issue books
-  function Reserve(id) {
-    alert(id + " Reserve user")
+  function Reserve(book_id, bookname, user_email, src) {
     $.ajax({
       type: "POST",
-      url: "./backend/issueBook.php",
+      url: "./backend/reserveBooks.php",
       data: {
-        book_id: id
+        user_email: user_email,
+        book_id: book_id,
+        bookname: bookname,
+        src: src
       },
       success: function(data) {
         if (data === "success") {
