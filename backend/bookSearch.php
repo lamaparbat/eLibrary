@@ -3,7 +3,7 @@ include 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $keyword = $_POST["data"];
-   $query = "SELECT * FROM books WHERE name LIKE '%$keyword%'";
+   $query = "SELECT * FROM books WHERE name LIKE '%$keyword%' OR author LIKE '%$keyword%'";
    $res = mysqli_query($con, $query) or die(mysqli_error($con));
    while ($row = mysqli_fetch_assoc($res)) {
       //data
