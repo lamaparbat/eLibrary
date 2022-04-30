@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  $query = "SELECT * FROM reserved WHERE user_email='$user_email' AND book_id='$book_id'";
  $result = mysqli_query($con, $query) or die(mysqli_error($con));
  if (mysqli_num_rows($result) > 0) {
-  echo "failed";
+  echo "found";
  } else {
   //insert query
   $query = "INSERT INTO reserved(user_email, book_id,bookname,src, date) VALUES('$user_email','$book_id','$bookname', '$src','$issue_date')";

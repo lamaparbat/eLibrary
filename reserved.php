@@ -22,8 +22,8 @@
  <div class="container members mt-5">
   <div class="row">
    <!-- scrollable member list -->
-   <div class="col-sm-8 px-3 data text-dark">
-    <div class="boxCont d-flex justify-content-center text-dark">
+   <div class="container col-sm-8 px-3 data text-dark">
+    <div class="container boxCont d-flex justify-content-center text-dark">
      data fetching.......
     </div>
    </div>

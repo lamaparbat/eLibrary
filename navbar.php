@@ -8,7 +8,8 @@
    <div id="avatar" class="mt-4 mb-2">
      <img src="./img/avatar.png" height="100%" width="100%" onclick="redirectHomepage()" />
    </div>
-   <span>
+  <center>
+ <span>
      <?php
       if ($visible === "block") {
         echo "Admin Panel";
@@ -21,6 +22,7 @@
       }
       ?>
    </span>
+</center>
    <hr />
    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
    <a href="index.php"> <i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>

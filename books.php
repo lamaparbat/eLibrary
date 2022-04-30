@@ -175,7 +175,9 @@
       success: function(data) {
         if (data === "success") {
           alert("Book successfully reserved");
-        } else {
+        } else if(data === "found"){
+   alert("Selected book already reserved !!")
+}else {
           alert("500!!.  Failed to reserved book !!");
         }
       },

@@ -1,6 +1,7 @@
 <?php
 include 'connection.php';
-$query = "SELECT * FROM reserved";
+$user_email = json_decode($_COOKIE["user_data"])[0];
+$query = "SELECT * FROM reserved WHERE user_email='$user_email'";
 $res = mysqli_query($con, $query) or die(mysqli_error($con));
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
