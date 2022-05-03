@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
          </div>
          <div class="body d-flex flex-column">
          <h5 class="mx-3 my-2"><b>'.$bookname.'</b></h5>
-         <span class="mx-3">User ID: <font id="value">'.$user_email. '</font></span>
+         <span class="mx-3">User: <font id="value">'.$user_email. '</font></span>
          <span class="mx-3">Reserved on: <font id="value">' . $date . '</font></span>
          </div>
          <div class="d-flex justify-content-around footer">
