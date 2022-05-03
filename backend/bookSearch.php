@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $rack_no = $row["rack_no"];
       $quantity =  $row["quantity"];
       $user_email = json_decode($_COOKIE["user_data"])[0];
+
       //visibility based on admin and user
       $display = "none";
       if (json_decode($_COOKIE["user_data"])[3] === "admin") {
