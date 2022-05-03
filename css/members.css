@@ -25,7 +25,7 @@
   border-color:white;
 }
 .members .sidebar form div .icon_cont i{
- color:rgb(87, 30, 30)smoke;
+ color:rgb(87, 30, 30);
 }
 .members .sidebar form div .icon_cont #userIcon,.members .sidebar form div .icon_cont #passwordIcon {
   font-size: 25px;

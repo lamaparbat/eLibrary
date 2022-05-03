@@ -1,24 +1,21 @@
 <?php
 include 'connection.php';
 
-if (json_decode($_COOKIE["user_data"])[3] != "admin") {
-   header("Location: http://localhost/eLibrary/admin_login.php");
-}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   $keyword = $_POST["data"];
+   $query = "SELECT * FROM fined_users WHERE user_email LIKE '%$keyword%' OR bookname LIKE '%$keyword%'";
+   $res = mysqli_query($con, $query) or die(mysqli_error($con));
+   while ($row = mysqli_fetch_assoc($res)) {
+      //data
+      $id = $row["id"];
+      $user_email = $row["user_email"];
+      $bookname = $row["bookname"];
+      $amount = $row["amount"];
+      $exceed_day = $row["exceed_day"];
+      $date = $row["date"];
+      $src = $row["src"];
 
-$query = "SELECT * FROM fined_users";
-$res = mysqli_query($con, $query) or die(mysqli_error($con));
-
-while ($row = mysqli_fetch_assoc($res)) {
-   //data
-   $id = $row["id"];
-   $user_email = $row["user_email"];
-   $bookname = $row["bookname"];
-   $amount = $row["amount"];
-   $exceed_day = $row["exceed_day"];
-   $date = $row["date"];
-   $src = $row["src"];
-
-   echo '
+      echo '
       <div class="box pb-2 mx-1 my-2" style="height:fit-content;">
       <br />
       <div class="bookImg">
@@ -37,4 +34,5 @@ while ($row = mysqli_fetch_assoc($res)) {
      </div>
 
       ';
+   }
 }

@@ -1,6 +1,6 @@
 <div class="searchNav mt-2">
  <div id="searchbar">
-  <div class="totalMem p-2 px-3 mx-2 rounded-1">
+  <div class="totalMem p-2 px-3 mx-2 rounded-1" onclick="hideSidebar()">
    <i class="fa fa-align-right mx-1" aria-hidden="true"></i>
   </div>
   <div class="totalMem mx-3 p-2 px-3 rounded-1" id="memberCount">
@@ -58,7 +58,17 @@
      $(".boxCont").html(data);
     }
    })
+  } else if (endpoint === "delay.php") {
+   $.ajax({
+    url: "./backend/notReturnedSearch.php",
+    type: "POST",
+    data: {
+     data: e.target.value
+    },
+    success: function(data) {
+     $(".boxCont").html(data);
+    }
+   })
   }
-
- })
+ });
 </script>

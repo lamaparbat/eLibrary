@@ -2,7 +2,7 @@
 include 'connection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  $book_name = $_POST["book_name"];
- $book_description = $_POST["book_description"];
+ $book_description = str_replace("'","`", $_POST["book_description"]);
  $book_author = $_POST["book_author"];
  $book_quantity = $_POST["book_quantity"];
  $book_rack = $_POST["book_rack"];

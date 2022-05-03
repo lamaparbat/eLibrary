@@ -60,7 +60,7 @@
   }
 
   //track the issued book date
-
+  
 
  </script>
 </body>

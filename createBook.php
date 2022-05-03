@@ -4,7 +4,8 @@
    <span>Enter Book Name</span><br />
    <input class="p-1 px-3" name="book_name" type="text" placeholder="" id="name" required /><br /><br />
    <span>Enter short Book Description</span><br />
-   <textarea class="p-1 px-3 mb-1" name="book_description" type="text" placeholder="" id="description" required></textarea><br />
+   <span class="text-danger" id="error_span"></span>
+   <textarea class="p-1 px-3 mb-1" name="book_description" type="text" placeholder="" id="description" onkeyup="getDescription(event)" required></textarea><br />
    <span>Enter Writer Name</span><br />
    <input class="p-1 px-3" type="text" name="book_author" placeholder="" id="writer" required /><br /><br />
    <span>Enter Available Books Quantity</span><br />
@@ -33,7 +34,25 @@
    </select><br /><br />
    <span>Enter post banner(Image)</span><br />
    <input class="p-1" name="img" type="file" id="img" /><br /><br />
-   <input type="submit" class="btn btn-primary rounded-0" />
+   <input type="submit" id="submit_btn" class="btn btn-primary rounded-0" />
   </form>
  </div>
 </div>
+
+<script>
+ function getDescription(event) {
+  if (event.keyCode === 8) {
+   console.log(event.target.value.length)
+   if (event.target.value.length <= 800) {
+    document.getElementById("description").style.border = "none";
+    document.getElementById("submit_btn").disabled = false;
+   }
+  } else {
+   if (event.target.value.length >= 800) {
+    alert("Characters must be less than 800.");
+    document.getElementById("description").style.border = "4px solid red";
+    document.getElementById("submit_btn").disabled = true;
+   }
+  }
+ }
+</script>

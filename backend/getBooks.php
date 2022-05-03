@@ -13,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       $src = 'backend/books_img/' . $row["src"];
       $category = $row["category"];
       $author = $row["author"];
+      $rack_no = $row["rack_no"];
+      $quantity =  $row["quantity"];
       $user_email = json_decode($_COOKIE["user_data"])[0];
       //visibility based on admin and user
       $display = "none";
@@ -27,11 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
        <img src=' . $src . ' class="img-fluid" />
      </div>
       <div class="body">
-       <h5 class="mx-3 my-2">'.$id.' <b>' . $name . '</b></h5>
+       <h5 class="mx-3 my-2">' . $id . ' <b>' . $name . '</b></h5>
        <span class="mx-3">Authors: <font id="value">' . $author . '</font></span>
        <span class="mx-3">Category: <font id="value">' . $category . '</font></span>
-       <span class="mx-3">Quantity: <font id="value">542 .........</font></span>
-       <span class="mx-3">Rack No.: <font id="value">D-12</font></span>
+       <span class="mx-3">Quantity: <font id="value">' . $quantity . '</font></span><br/>
+       <span class="mx-3">Rack No.: <font id="value">' . $rack_no . '</font></span><br/>
        <span class="mx-3">Published: <font id="value">' . $published . '</font></span>
       </div>
       <div class="d-flex justify-content-around footer">
