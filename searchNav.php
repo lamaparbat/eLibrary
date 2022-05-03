@@ -47,6 +47,17 @@
      $(".boxCont").html(data);
     }
    })
+  } else if (endpoint === "issued.php") {
+   $.ajax({
+    url: "./backend/issueBooksSearch.php",
+    type: "POST",
+    data: {
+     data: e.target.value
+    },
+    success: function(data) {
+     $(".boxCont").html(data);
+    }
+   })
   }
 
  })

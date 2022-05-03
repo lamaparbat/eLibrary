@@ -175,9 +175,9 @@
       success: function(data) {
         if (data === "success") {
           alert("Book successfully reserved");
-        } else if(data === "found"){
-   alert("Selected book already reserved !!")
-}else {
+        } else if (data === "found") {
+          alert("Selected book already reserved !!")
+        } else {
           alert("500!!.  Failed to reserved book !!");
         }
       },
@@ -187,7 +187,7 @@
     })
   }
 
-  // search books response
+  //fetched books
   $.ajax({
     type: "GET",
     url: "./backend/getBooks.php",

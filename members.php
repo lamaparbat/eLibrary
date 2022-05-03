@@ -210,7 +210,7 @@
     }
   }
 
-  // search books response
+  // search
   $.ajax({
     type: "GET",
     url: "./backend/getMembers.php",
