@@ -16,7 +16,6 @@
 
 <body>
 
-
  <!-- default authentical routing -->
  <?php include "auth.php"; ?>
 
@@ -45,9 +44,11 @@
  <script>
   //open create book popup model
   document.querySelector(".profile_nav").style.display = "none";
+  document.querySelector(".createCourse").style.display === "none"
   document.querySelector(".createCourse").style.background = "red !important";
   document.querySelector(".main").style.display = "flex";
   document.querySelector("#title").style.display = "flex";
+
 
   function createBook() {
    if (document.querySelector(".createCourse").style.display === "none") {
@@ -60,8 +61,6 @@
   }
 
   //track the issued book date
-  
-
  </script>
 </body>
 

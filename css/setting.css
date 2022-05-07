@@ -1,0 +1,41 @@
+.setting {
+ display: grid;
+ place-items: center;
+}
+
+.setting .title {
+ border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.setting .setting_row {
+ width: 70%;
+
+}
+
+/* edit profile container */
+.edit_profile_cont1 {
+ display: flex;
+ justify-content: space-around;
+}
+
+.edit_profile_cont1 div span {
+ font-family: sans-serif;
+ color: rgb(60, 60, 60);
+}
+
+.edit_profile_cont1 div input {
+ width: 300px;
+}
+
+
+
+/* on resized viewport */
+@media(max-width:1100px) {
+ .setting .setting_row {
+  width: 100%;
+ }
+
+ .edit_profile_cont1 {
+  flex-direction: column;
+ }
+}

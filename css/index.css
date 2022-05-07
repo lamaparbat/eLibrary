@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
-.profile_nav{
+
+.profile_nav {
   top: 60px;
   height: 93vh;
   width: 100%;
@@ -10,86 +11,100 @@
   z-index: 444;
   background-color: rgb(248, 248, 248);
 }
-.profile_nav .row .content{
+
+.profile_nav .row .content {
   padding: 40px;
   height: 500px;
   width: 350px;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
--webkit-box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
--moz-box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
+  box-shadow: 0px 2px 6px -1px rgba(171, 171, 171, 0.75);
+  -webkit-box-shadow: 0px 2px 6px -1px rgba(171, 171, 171, 0.75);
+  -moz-box-shadow: 0px 2px 6px -1px rgba(171, 171, 171, 0.75);
 }
-.profile_nav .row .content .row1{
+
+.profile_nav .row .content .row1 {
   display: flex;
   justify-content: center;
 }
-.profile_nav .row .content .row1 #avatar{
- height: 90px;
- width: 90px;
- border-radius: 50%;
- background-color: whitesmoke;
- cursor: pointer;
- overflow-x: hidden;
+
+.profile_nav .row .content .row1 #avatar {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  cursor: pointer;
+  overflow-x: hidden;
 }
-.profile_nav .row .content .row1 #avatar:hover{
- opacity: 0.8;
+
+.profile_nav .row .content .row1 #avatar:hover {
+  opacity: 0.8;
 }
-.profile_nav .row .content .row1 #avatar img{
- transform: scale(0.8);
+
+.profile_nav .row .content .row1 #avatar img {
+  transform: scale(0.8);
 }
-.profile_nav #email{
-  font-family:'Courier New', Courier, monospace;
+
+.profile_nav #email {
+  font-family: 'Courier New', Courier, monospace;
 }
-.profile_nav .row .content #setting_btn{
+
+.profile_nav .row .content #setting_btn {
   font-size: 14px;
   letter-spacing: 1px;
   border-radius: 20px;
-  border:0.1px solid rgb(212, 212, 212);
+  border: 0.1px solid rgb(212, 212, 212);
 }
-.profile_nav .row .content #setting_btn:hover{
+
+.profile_nav .row .content #setting_btn:hover {
   opacity: 0.7;
 }
-.profile_nav .row .content #logout_btn{
+
+.profile_nav .row .content #logout_btn {
   font-size: 14px;
   letter-spacing: 1px;
   border-radius: 5px;
-  border:0.1px solid rgb(212, 212, 212);
+  border: 0.1px solid rgb(212, 212, 212);
 }
-.profile_nav .row .content #logout_btn:hover{
+
+.profile_nav .row .content #logout_btn:hover {
   opacity: 0.7;
 }
-.profile_nav .row .content .copyright{
+
+.profile_nav .row .content .copyright {
   margin-top: 90px;
   text-align: center;
 }
-.profile_nav .row .content .copyright span{
+
+.profile_nav .row .content .copyright span {
   padding: 5px;
   font-size: 13px;
   color: rgb(116, 116, 116);
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 1.2px;
   border-radius: 3px;
   cursor: pointer;
 }
-.profile_nav .row .content .copyright span:hover{
-background-color: rgb(148, 144, 143);
+
+.profile_nav .row .content .copyright span:hover {
+  background-color: rgb(148, 144, 143);
 }
 
-#title{
- font-size: 24px;
- margin-left: 40px;
- font-weight: bold;
- font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+#title {
+  font-size: 24px;
+  margin-left: 40px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.main{
+
+.main {
   padding: 10px;
-  height: 80vh;
   display: flex;
   justify-content: space-evenly;
   flex-flow: wrap;
   color: black;
 }
-.main .box1, .main .box2, .main .box3,.main .box4{
+
+.main .box1, .main .box2, .main .box3, .main .box4 {
   padding: 15px;
   padding-right: 20px;
   padding-left: 20px;
@@ -98,31 +113,37 @@ background-color: rgb(148, 144, 143);
   height: 230px;
   width: 330px;
   font-family: monospace;
-  border:0.1px solid rgb(202, 202, 202);
-  border-radius:5px;
+  border: 0.1px solid rgb(202, 202, 202);
+  border-radius: 5px;
   cursor: pointer;
 }
-.main .box1:hover, .main .box2:hover, .main .box3:hover,.main .box4:hover{
-  box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
--webkit-box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
--moz-box-shadow: 0px 2px 6px -1px rgba(171,171,171,0.75);
+
+.main .box1:hover, .main .box2:hover, .main .box3:hover, .main .box4:hover {
+  box-shadow: 0px 2px 6px -1px rgba(171, 171, 171, 0.75);
+  -webkit-box-shadow: 0px 2px 6px -1px rgba(171, 171, 171, 0.75);
+  -moz-box-shadow: 0px 2px 6px -1px rgba(171, 171, 171, 0.75);
 }
-.main .box1{
-   background-color: blanchedalmond;
+
+.main .box1 {
+  background-color: blanchedalmond;
 }
-.main .box1 .body span, .main .box2 .body span, .main .box3 .body span, .main .box4 .body span{
+
+.main .box1 .body span, .main .box2 .body span, .main .box3 .body span, .main .box4 .body span {
   font-size: 50px;
- letter-spacing: 3px;
- font-family: 'Karla', sans-serif;
+  letter-spacing: 3px;
+  font-family: 'Karla', sans-serif;
 }
-.main .box1 .body h6, .main .box2 .body h6, .main .box3 .body h6, .main .box4 .body h6{
+
+.main .box1 .body h6, .main .box2 .body h6, .main .box3 .body h6, .main .box4 .body h6 {
   font-weight: bolder;
 }
-.main .box1 .body p, .main .box2 .body p, .main .box3 .body p, .main .box4 .body p{
+
+.main .box1 .body p, .main .box2 .body p, .main .box3 .body p, .main .box4 .body p {
   margin-top: -11px;
-  font-family:monospace;
+  font-family: monospace;
 }
-.main .box1 .footer div,.main .box2 .footer div, .main .box3 .footer div, .main .box4 .footer div{
+
+.main .box1 .footer div, .main .box2 .footer div, .main .box3 .footer div, .main .box4 .footer div {
   margin-top: -10px;
   padding: 5px;
   padding-left: 8px;
@@ -134,44 +155,55 @@ background-color: rgb(148, 144, 143);
   background-color: rgb(230, 217, 217);
   border-radius: 50%;
 }
-.main .box1 .footer div i, .main .box2 .footer div i, .main .box3 .footer div i, .main .box4 .footer div i{
- font-size: 20px;
+
+.main .box1 .footer div i, .main .box2 .footer div i, .main .box3 .footer div i, .main .box4 .footer div i {
+  font-size: 20px;
 }
 
-.main .box1  div i{
+.main .box1 div i {
   font-size: 22px;
   cursor: pointer;
 }
-.main .box1  div i:hover{
- opacity: 0.7;
+
+.main .box1 div i:hover {
+  opacity: 0.7;
 }
-.main .box2{
-   background-color:rgb(191, 190, 228);
+
+.main .box2 {
+  background-color: rgb(191, 190, 228);
 }
-.main .box2  div i{
+
+.main .box2 div i {
   font-size: 22px;
   cursor: pointer;
 }
-.main .box2  div i:hover{
- opacity: 0.7;
+
+.main .box2 div i:hover {
+  opacity: 0.7;
 }
-.main .box3{
-   background-color: khaki;
+
+.main .box3 {
+  background-color: khaki;
 }
-.main .box3  div i{
+
+.main .box3 div i {
   font-size: 22px;
   cursor: pointer;
 }
-.main .box3  div i:hover{
- opacity: 0.7;
+
+.main .box3 div i:hover {
+  opacity: 0.7;
 }
-.main .box4{
-   background-color:lightpink ;
+
+.main .box4 {
+  background-color: lightpink;
 }
-.main .box4  div i{
+
+.main .box4 div i {
   font-size: 22px;
   cursor: pointer;
 }
-.main .box4  div i:hover{
- opacity: 0.7;
+
+.main .box4 div i:hover {
+  opacity: 0.7;
 }

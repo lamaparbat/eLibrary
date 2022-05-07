@@ -196,6 +196,16 @@
       $(".boxCont").html(data);
     }
   })
+
+  //fetched data
+  $.ajax({
+    type: "GET",
+    url: "",
+    dataType: "html",
+    success: function(data) {
+      $(".boxCont").html(data);
+    }
+  })
 </script>
 </body>
 
