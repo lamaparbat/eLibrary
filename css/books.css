@@ -128,7 +128,6 @@
   -webkit-box-shadow: 0px 1px 5px 0px rgba(181, 181, 181, 0.75);
   -moz-box-shadow: 0px 1px 5px 0px rgba(181, 181, 181, 0.75);
   cursor: pointer;
- background-color: red;
 }
 
 .members .rows .data .edit_cont:hover {

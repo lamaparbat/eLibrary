@@ -13,7 +13,8 @@ if (json_decode($_COOKIE["user_data"])[3] === "user") {
  //get the total issued books count
  $query = "SELECT * FROM issued WHERE user_email='$email'";
  $result = mysqli_query($con, $query);
- if ($count = mysqli_num_rows($result) > 0) {
+ $count = mysqli_num_rows($result);
+ if ($count > 0) {
   $total_issued_book_count = $count;
  } else {
   $total_issued_book_count = 0;
@@ -22,7 +23,8 @@ if (json_decode($_COOKIE["user_data"])[3] === "user") {
  //get the total reserved books count
  $query = "SELECT * FROM reserved WHERE user_email='$email'";
  $result = mysqli_query($con, $query);
- if ($count = mysqli_num_rows($result) > 0) {
+ $count = mysqli_num_rows($result);
+ if ($count > 0) {
   $total_reserved_book_count = $count;
  } else {
   $total_reserved_book_count = 0;
@@ -31,7 +33,8 @@ if (json_decode($_COOKIE["user_data"])[3] === "user") {
  //get the total reserved books count
  $query = "SELECT * FROM returned WHERE user_email='$email'";
  $result = mysqli_query($con, $query);
- if ($count = mysqli_num_rows($result) > 0) {
+ $count = mysqli_num_rows($result);
+ if ($count > 0) {
   $total_returned_book_count = $count;
  } else {
   $total_returned_book_count = 0;
@@ -42,7 +45,8 @@ if (json_decode($_COOKIE["user_data"])[3] === "admin") {
  //get the total issued books count
  $query = "SELECT * FROM issued";
  $result = mysqli_query($con, $query);
- if ($count = mysqli_num_rows($result) > 0) {
+ $count = mysqli_num_rows($result);
+ if ($count > 0) {
   $total_issued_book_count = $count;
  } else {
   $total_issued_book_count = 0;
@@ -51,7 +55,8 @@ if (json_decode($_COOKIE["user_data"])[3] === "admin") {
  //get the total reserved books count
  $query = "SELECT * FROM reserved";
  $result = mysqli_query($con, $query);
- if ($count = mysqli_num_rows($result) > 0) {
+ $count = mysqli_num_rows($result);
+ if ($count > 0) {
   $total_reserved_book_count = $count;
  } else {
   $total_reserved_book_count = 0;
@@ -60,10 +65,51 @@ if (json_decode($_COOKIE["user_data"])[3] === "admin") {
  //get the total reserved books count
  $query = "SELECT * FROM returned";
  $result = mysqli_query($con, $query);
- if ($count = mysqli_num_rows($result) > 0) {
+ $count = mysqli_num_rows($result);
+ if ($count > 0) {
   $total_returned_book_count = $count;
  } else {
   $total_returned_book_count = 0;
+ }
+
+ //get the total fined user count
+ $query = "SELECT * FROM fined_users";
+ $result = mysqli_query($con, $query);
+ $count = mysqli_num_rows($result);
+ if ($count > 0) {
+  $total_fined_users_count = $count;
+ } else {
+  $total_fined_users_count = 0;
+ }
+
+ //get the total members count
+ $query = "SELECT * FROM members";
+ $result = mysqli_query($con, $query);
+ $count = mysqli_num_rows($result);
+ if ($count > 0) {
+  $total_members_count = $count;
+ } else {
+  $total_members_count = 0;
+ }
+
+ //get the total users count
+ $query = "SELECT * FROM user";
+ $result = mysqli_query($con, $query);
+ $count = mysqli_num_rows($result);
+ if ($count > 0) {
+  $total_users_count = $count;
+ } else {
+  $total_users_count = 0;
+ }
+
+ //get the total fined users count
+ $query = "SELECT * FROM user";
+ $result = mysqli_query($con, $query);
+ $count = mysqli_num_rows($result);
+ if ($count > 0) {
+  $total_users_count = $count;
+ } else {
+  $total_users_count = 0;
  }
 }
 
@@ -153,7 +199,7 @@ if (json_decode($_COOKIE["user_data"])[3] === "admin") {
     <i class="fa fa-ellipsis-h mt-1" aria-hidden="true"></i>
    </div>
    <div class="body pt-3">
-    <span>34</span><br />
+    <span><?php echo $total_fined_users_count; ?></span><br />
     <h6>Total Books not returned</h6>
     <p>From 2018 - 2020</p>
    </div>
@@ -171,7 +217,7 @@ if (json_decode($_COOKIE["user_data"])[3] === "admin") {
     <i class="fa fa-ellipsis-h mt-1" aria-hidden="true"></i>
    </div>
    <div class="body pt-3">
-    <span>991</span><br />
+    <span><?php echo $total_members_count; ?></span><br />
     <h6>Total Library Members</h6>
     <p>From 2018 - 2020</p>
    </div>
@@ -188,7 +234,7 @@ if (json_decode($_COOKIE["user_data"])[3] === "admin") {
     <i class="fa fa-ellipsis-h mt-1" aria-hidden="true"></i>
    </div>
    <div class="body pt-3">
-    <span>32001</span><br />
+    <span><?php echo $total_users_count; ?></span><br />
     <h6>Total Books users</h6>
     <p>From 2018 - 2020</p>
    </div>
@@ -205,7 +251,7 @@ if (json_decode($_COOKIE["user_data"])[3] === "admin") {
     <i class="fa fa-ellipsis-h mt-1" aria-hidden="true"></i>
    </div>
    <div class="body pt-3">
-    <span>1201</span><br />
+    <span><?php echo $total_fined_users_count; ?></span><br />
     <h6>Total Fined users</h6>
     <p>From 2018 - 2020</p>
    </div>
