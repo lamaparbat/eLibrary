@@ -16,6 +16,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  if(mysqli_query($con, $query) or die(mysqli_error($con))){
      $query = "DELETE FROM issued WHERE id=$issue_id";
      if(mysqli_query($con, $query) or die(mysqli_error($con))){
+      //update the book quantity
+      $query = "SELECT * FROM books WHERE id=$book_id";
+      $result = mysqli_query($con, $query) or die(mysqli_error($con));
+      while ($row = mysqli_fetch_assoc($result)) {
+        $quantity = $row["quantity"];
+        $remaining_quantity = $quantity + 1;
+        $query = "UPDATE books SET quantity=$remaining_quantity WHERE id='$book_id'";
+        mysqli_query($con, $query) or die(mysqli_error($con));
+
+      }
+
        echo "success";
      }else{
        echo "failed";
@@ -25,5 +36,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      echo "failed";
  }
 }
-
-?>

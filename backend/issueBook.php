@@ -14,13 +14,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $query = "SELECT * FROM books WHERE id=$book_id";
     $result = mysqli_query($con, $query) or die(mysqli_error($con));
     while ($row = mysqli_fetch_assoc($result)) {
+      $id = $row["id"];
       $book_name = $row["name"];
       $rack_no = $row["rack_no"];
       $src = $row["src"];
+      $quantity = $row["quantity"];
 
       //insert query
       $query = "INSERT INTO issued(user_email, bookname, book_id, issued_date, deadline,src) VALUES('$user_email','$book_name','$book_id','$issue_date','$deadline','$src')";
       if (mysqli_query($con, $query) or die(mysqli_error($con))) {
+         //update the book quantity
+         $remaining_quantity = $quantity - 1;
+         $query = "UPDATE books SET quantity=$remaining_quantity WHERE id='$id'";
+        mysqli_query($con, $query) or die(mysqli_error($con));
+  
         //delete from issued database
         $query = "DELETE FROM reserved WHERE user_email = '$user_email' AND book_id='$book_id'";
         mysqli_query($con, $query) or die(mysqli_error($con));
