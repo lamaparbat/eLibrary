@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  //update the books db
  if (mysqli_query($con, $query) or die(mysqli_error($con))) {
+  $user_data[0] = $email;
   header("Location: http://localhost/elibrary/login.php");
  } else {
   header("Location: http://localhost/elibrary/setting.php");

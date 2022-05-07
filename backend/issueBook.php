@@ -21,6 +21,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       //insert query
       $query = "INSERT INTO issued(user_email, bookname, book_id, issued_date, deadline,src) VALUES('$user_email','$book_name','$book_id','$issue_date','$deadline','$src')";
       if (mysqli_query($con, $query) or die(mysqli_error($con))) {
+        //delete from issued database
+        $query = "DELETE FROM reserved WHERE user_email = '$user_email' AND book_id='$book_id'";
+        mysqli_query($con, $query) or die(mysqli_error($con));
         header("Location:http://localhost/elibrary/issued.php");
       } else {
         header("Location:http://localhost/elibrary/books.php");
