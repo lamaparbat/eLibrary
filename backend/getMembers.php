@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $email = $row["email"];
   $password =  $row["password"];
   $phone = $row["phone"];
-  $src = 'backend/uploads/'.$row["profile"];
+  $src = 'backend/uploads/'.$row["src"];
 
   //visibility based on admin and user
   $display = "none";

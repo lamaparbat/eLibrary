@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $file_name = $_FILES["profile"]["name"];
   $temp_name = $_FILES["profile"]["tmp_name"];
 
+   //form validation
   if ($username != "" && strlen($file_name) > 0) {
     // upload image file to local folder
     move_uploaded_file($temp_name, "uploads/" . $file_name) or die(mysqli_error(($con)));

@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $display = "inline";
       }
 
+      //send response to the frontend as html 
       echo '
      <div class="box pb-2 mx-1 my-2"  id=' . $id . '> 
       <br />

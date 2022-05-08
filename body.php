@@ -23,7 +23,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 $query = "SELECT * FROM books";
 $total_book_count = mysqli_num_rows(mysqli_query($con, $query)) or die(mysqli_error($con));
 
-if (json_decode($_COOKIE["user_data"])[3] === "user") {
+if (json_decode($_COOKIE["user_data"])[3] === "user"|| json_decode($_COOKIE["user_data"])[3] === "member") {
   //get the total issued books count
   $query = "SELECT * FROM issued WHERE user_email='$email'";
   $result = mysqli_query($con, $query);
@@ -55,7 +55,7 @@ if (json_decode($_COOKIE["user_data"])[3] === "user") {
   }
 }
 
-if (json_decode($_COOKIE["user_data"])[3] === "admin" || json_decode($_COOKIE["user_data"])[3] === "member") {
+if (json_decode($_COOKIE["user_data"])[3] === "admin") {
   //get the total issued books count
   $query = "SELECT * FROM issued";
   $result = mysqli_query($con, $query);

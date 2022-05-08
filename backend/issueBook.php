@@ -4,12 +4,21 @@ include 'connection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $book_id = $_POST["book_id"];
   $user_email = $_POST["user_email"];
+
+  //get the current date & convert the date into array , ["year","month","day"]
   $issue_date = explode("/", date("Y/m/d"));
+
+  //calculate the deadline by adding 1 to the current month
   $deadline = $issue_date[0] . "/" . ($issue_date[1] + 1) . "/" . $issue_date[2];
   $issue_date = $issue_date[0] . "/" . $issue_date[1] . "/" . $issue_date[2];
+ 
+  if(json_decode($_COOKIE["user_data"])[3] === "user"){
+     $query = "SELECT * FROM user WHERE email='$user_email'";
+  }else{
+    $query = "SELECT * FROM members WHERE email='$user_email'";
+  }
 
-
-  if (mysqli_num_rows(mysqli_query($con, "SELECT * FROM user WHERE email='$user_email'")) > 0) {
+  if (mysqli_num_rows(mysqli_query($con, $query)) > 0) {
     //search books and get book details
     $query = "SELECT * FROM books WHERE id=$book_id";
     $result = mysqli_query($con, $query) or die(mysqli_error($con));

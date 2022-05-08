@@ -2,6 +2,7 @@
 include 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//fetched all the post data
  $book_id = $_POST["book_id"];
  $bookname = $_POST["bookname"];
  $src = $_POST["src"];
@@ -12,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  $query = "SELECT * FROM reserved WHERE user_email='$user_email' AND book_id='$book_id'";
  $result = mysqli_query($con, $query) or die(mysqli_error($con));
  if (mysqli_num_rows($result) > 0) {
-  echo "found";
+  echo "user alread reserved the book";
  } else {
   //insert query
   $query = "INSERT INTO reserved(user_email, book_id,bookname,src, date) VALUES('$user_email','$book_id','$bookname', '$src','$issue_date')";
@@ -22,7 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $result = mysqli_query($con, $query) or die(mysqli_error($con));
    while ($row = mysqli_fetch_assoc($result)) {
     $quantity = $row["quantity"];
+    
+   //decrease the quantity by 1
     $remaining_quantity = $quantity - 1;
+
     $query = "UPDATE books SET quantity=$remaining_quantity WHERE id='$book_id'";
     mysqli_query($con, $query) or die(mysqli_error($con));
    }

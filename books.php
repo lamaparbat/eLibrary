@@ -50,7 +50,9 @@
               <input type="email" class="form-control shadow-0 rounded-0" placeholder="abc@gmail.com" name="user_email" id="uname" />
             </div>
             <input type="hidden" value="" name="data_id" id="data_id" />
+
             <input type="submit" name="submit" value="Issue Book" class="btn btn-primary mt-1 px-5 rounded-0" onclick="updateComplete()" required />
+
             <a class="btn btn-danger mt-1 px-5 rounded-0 cancelBtn" onclick="hideSidebar()">Cancel</a>
           </form>
         </div>
@@ -159,6 +161,7 @@
 
   //issue books
   function Reserve(book_id, bookname, user_email, src) {
+    //send parameter to the backend
     $.ajax({
       type: "POST",
       url: "./backend/reserveBooks.php",

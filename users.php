@@ -152,7 +152,7 @@
     }
   }
 
-  // search
+  // fetched books from the server
   $.ajax({
     type: "GET",
     url: "./backend/getUsers.php",

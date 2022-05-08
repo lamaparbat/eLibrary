@@ -17,11 +17,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $result = mysqli_query($con, $query);
   while ($row = mysqli_fetch_assoc($result)) {
     $quantity = $row["quantity"];
+
+ //re increment the book quantity
     $remaining_quantity = $quantity + 1;
+
     $query = "UPDATE books SET quantity=$remaining_quantity WHERE name='$bookname'";
     if (mysqli_query($con, $query)) {
-      //delete this data from not returned
+      //delete this data from not returned page
       $query = "DELETE FROM fined_users WHERE id='$issued_id'";
+     
+      //store returned data to return database
       if (mysqli_query($con, $query)) {
         $query = "INSERT INTO returned(username, user_email, bookname, book_id, date,src) VALUES('$username','$user_email','$bookname','$book_id', '$date', '$src')";
         mysqli_query($con, $query);
