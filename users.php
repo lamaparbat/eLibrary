@@ -137,13 +137,13 @@
     if (res) {
       $.ajax({
         type: "POST",
-        url: "./backend/deleteMember.php",
+        url: "./backend/deleteUser.php",
         data: {
           id: id
         },
         success: function(data) {
           alert(data)
-          location.assign("http://localhost/eLibrary/members.php")
+          location.assign("http://localhost/eLibrary/users.php")
         },
         error: function() {
           alert("Failed to delete !!")

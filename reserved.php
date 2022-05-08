@@ -63,16 +63,18 @@
       })
     }
 
-    function issuedBook(user_email, bookid) {
+    function issuedBook(user_email, bookid, src) {
       const userEmail = user_email;
       const bookId = bookid;
+      const img_src = src;
 
       $.ajax({
         type: "POST",
-        url: "./backend/issueBook.php",
+        url: "./backend/issueReservedBook.php",
         data: {
           book_id: bookId,
-          user_email: userEmail
+          user_email: userEmail,
+          src:img_src
         },
         success: function(data) {
           alert("successfully book issued")

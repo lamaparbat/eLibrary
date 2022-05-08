@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
          <span class="mx-3">Reserved on: <font id="value">' . $date . '</font></span>
          </div>
          <div class="d-flex justify-content-around footer">
-         <div class="edit_cont bg-info text-light px-2 py-1 w-75 d-flex justify-content-center align-items-center d-'. (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'inline' : 'none') . '" onclick="issuedBook(\'' . $user_email . '\',\'' . $book_id . '\')"><i class="fa fa-rocket" aria-hidden="true"></i> &nbsp; Issued</div>
+         <div class="edit_cont bg-info text-light px-2 py-1 w-75 d-flex justify-content-center align-items-center d-'. (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'inline' : 'none') . '" onclick="issuedBook(\'' . $user_email . '\',\'' . $book_id . '\',\'' . $src . '\',\'' . $id . '\')"><i class="fa fa-rocket" aria-hidden="true"></i> &nbsp; Issued</div>
          <div class="edit_cont bg-danger text-light px-2 py-1 w-75 d-flex justify-content-center align-items-center d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '" onclick="deleteReservedBook(' . $id . ')"><i class="fa fa-rocket" aria-hidden="true"></i> &nbsp; Delete</div>
         </div>
       </div>

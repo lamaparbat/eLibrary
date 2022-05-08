@@ -49,11 +49,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
        <div class="edit_cont px-2 d-' . $display . '" onclick="Delete(' . $id . ')">
            <i class="fa fa-trash" aria-hidden="true"></i> Delete
        </div>
-       <div class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '">
-          <i class="fa fa-info-circle" aria-hidden="true"></i> Details
-       </div>
       </div>
      </div>
     ';
    }
 }
+
+      //  <div class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '">
+      //     <i class="fa fa-info-circle" aria-hidden="true"></i> Details
+      //  </div>

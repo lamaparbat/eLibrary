@@ -12,9 +12,9 @@ $query = "SELECT * FROM books ORDER BY date ASC";
 
 //get the last created book
 $result = mysqli_query($con, $query);
-while($row = mysqli_fetch_assoc($result)){
+while ($row = mysqli_fetch_assoc($result)) {
   $start_date = $row["date"];
-  $arr = explode("-",$start_date);
+  $arr = explode("-", $start_date);
   $start_date = $arr[0];
   break;
 }

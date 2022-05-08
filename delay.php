@@ -67,16 +67,21 @@
       });
 
       //delete returned book
-      function deleteDelay(id) {
+      function returnBook(user_email, bookname, src, id) {
         //send delete request to the backend server
+        var bookname =  bookname.trim()
+        var id = parseInt(id)
         $.ajax({
           method: "post",
-          url: "./backend/deleteDelay.php",
+          url: "./backend/returnDelay.php",
           data: {
-            id: id
+            id: id,
+            user_email: user_email,
+            bookname: bookname,
+            src: src
           },
           success: function(result) {
-            location.assign("http://localhost/elibrary/delay.php");
+            //location.assign("http://localhost/elibrary/delay.php");
           },
           error: function(err) {
             console.log(err);

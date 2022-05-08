@@ -1,6 +1,9 @@
 <div class="container-fluid profile_nav">
   <div class="row">
     <div class="content">
+      <div class="d-flex justify-content-end">
+        <i class="fa fa-times btn" aria-hidden="true" onclick="redirect()"></i>
+      </div>
       <div class="row1 mb-2">
         <img id="avatar" src="./backend/uploads/<?php echo json_decode($_COOKIE["user_data"])[2]; ?>" height="100%" width="100%" />
       </div>
@@ -34,5 +37,9 @@
 <script>
   function logout() {
     location.assign("http://localhost/elibrary/backend/logout.php");
+  }
+
+  function redirect() {
+    location.assign("http://localhost/elibrary/")
   }
 </script>

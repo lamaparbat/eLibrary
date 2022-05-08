@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
          </div>
          <div class="body d-flex flex-column">
          <h5 class="mx-3 my-2"><b>'.$bookname.'</b></h5>
-         <span class="mx-3">User: <font id="value">'.$username. '</font></span>
+         <span class="mx-3">User:<font id="value">'.$user_email. '</font></span>
          <span class="mx-3">Returned on: <font id="value">' . $date . '</font></span>
          <span class="mx-3">Returned: <font class="px-2 bg-success text-light" id="value"><i class="fa fa-check" aria-hidden="true"></i></font></span>
          </div>

@@ -32,9 +32,8 @@ while ($row = mysqli_fetch_assoc($res)) {
        <span class="mx-3">Exceed day: <font class="bg-danger text-light" id="value">' . $exceed_day . '</font></span>
       </div>
       <div class="d-flex justify-content-around footer">
-       <div class="edit_cont px-2 bg-danger text-light w-100 text-center mx-2 py-1" onclick="deleteDelay(' . $id . ')"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>
+       <div class="edit_cont px-2 bg-danger text-light w-100 text-center mx-2 py-1" onclick="returnBook(\'' . $user_email . '\',\'' . $bookname . '\',\'' . $src . '\',\'' . $id . '\')"><i class="fa fa-trash" aria-hidden="true"></i></i> Returned</div>
       </div><br/>
      </div>
-
       ';
 }

@@ -33,10 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       </div>
       <div class="d-flex justify-content-around footer">
        <div class="edit_cont px-2" onclick="returnBook('.$id.',' . $book_id . ', `' . $bookname . '`, `' . $user_email . '`,`'.$row['src'].'`)"><i class="fa fa-pencil" aria-hidden="true"></i> Returned</div>
-       <div class="edit_cont px-2" onclick="deleteIssue(' . $id . ')"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>
+
       </div><br/>
      </div>
 
       ';
    }
 }
+
+//       <div class="edit_cont px-2" onclick="deleteIssue(' . $id . ')"><i class="fa fa-trash" aria-hidden="true"></i></i> Delete</div>

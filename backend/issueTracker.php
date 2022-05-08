@@ -23,6 +23,7 @@ while ($row = mysqli_fetch_assoc($res)) {
 
  $split_cur_date = explode("/", $cur_date);
  $split_deadline_date = explode("/", $deadline);
+
  $isMonthExceed = intval($split_deadline_date[1]) < intval($split_cur_date[1]) ? "yes" : "no";
  $isDayExceed = intval($split_deadline_date[2]) > intval($split_cur_date[2]) ? "yes" : "no";
 
