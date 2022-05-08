@@ -49,6 +49,13 @@
               </div>
               <input type="text" class="form-control shadow-0 rounded-0 email" placeholder="abc@gmail.com" name="email" id="uname" />
             </div>
+            <span>Enter password</span>
+            <div class="d-flex mt-2 mb-4">
+              <div class="icon_cont px-3 py-1 bg-light">
+                <i class="fa fa-eye" aria-hidden="true" id="emailIcon"></i>
+              </div>
+              <input type="text" class="form-control shadow-0 rounded-0 email" placeholder="" name="password" id="uname" />
+            </div>
             <span>Enter Phone number</span>
             <div class="d-flex mt-2 mb-4">
               <div class="icon_cont px-3 py-1 bg-light">

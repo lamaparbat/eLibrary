@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  $contact = $_POST["contact"];
  $email = $_POST["email"];
  $password = $_POST["new_password"];
+ $date = date("y/m/d");
  $file_name = $_FILES["file_inp"]["name"];
  $temp_name = $_FILES["file_inp"]["tmp_name"];
 
@@ -18,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //upload image file to local folder
   move_uploaded_file($temp_name,"uploads/".$file_name) or die(mysqli_error(($con)));
 
-  $insert_query = "INSERT INTO user(name, email, password, phone, src) VALUES('$username','$email','$password','$contact','$file_name')";
+  $insert_query = "INSERT INTO user(name, email, password, phone, src,date) VALUES('$username','$email','$password','$contact','$file_name','$date'";
   if (mysqli_query($con, $insert_query) or die(mysqli_error($con))) {
    echo "User registered Successfully Successfully !!";
    header("Location: http://localhost/eLibrary/login.php");

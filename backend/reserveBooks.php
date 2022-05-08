@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $result = mysqli_query($con, $query) or die(mysqli_error($con));
    while ($row = mysqli_fetch_assoc($result)) {
     $quantity = $row["quantity"];
-    $remaining_quantity = $quantity + 1;
+    $remaining_quantity = $quantity - 1;
     $query = "UPDATE books SET quantity=$remaining_quantity WHERE id='$book_id'";
     mysqli_query($con, $query) or die(mysqli_error($con));
    }

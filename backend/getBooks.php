@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
        <div 
          id="card_id' . $id . '" 
          class="edit_cont px-2 d-' . $display . '"
-          onclick="edit(' . $id . ', event)" >
+          onclick="edit(' . $id . ',event)" >
           <i class="fa fa-pencil" aria-hidden="true"></i> Edit
        </div>
          <div class="edit_cont px-2 d-' . (json_decode($_COOKIE["user_data"])[3] === 'admin' ? 'none' : 'inline') . '" onclick="Reserve(\'' . $id . '\',\'' . $name . '\',\'' . $user_email . '\',\'' . $src . '\')">

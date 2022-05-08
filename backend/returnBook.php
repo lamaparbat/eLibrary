@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $remaining_quantity = $quantity + 1;
         $query = "UPDATE books SET quantity=$remaining_quantity WHERE id='$book_id'";
         mysqli_query($con, $query) or die(mysqli_error($con));
-
       }
 
        echo "success";

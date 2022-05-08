@@ -8,7 +8,7 @@ if (isset($_POST["btn"])) {
   $password = $_POST["password"];
 
   //db insertion
-  $query = "SELECT * FROM admin WHERE email='$email' AND password = '$password'";
+  $query = "SELECT * FROM members WHERE email='$email' AND password = '$password'";
   $result = mysqli_query($con, $query);
   if (mysqli_num_rows($result) > 0) {
     //get the user data
@@ -18,7 +18,7 @@ if (isset($_POST["btn"])) {
         $user_data[0] = $row["email"];
         $user_data[1] = $row["name"];
         $user_data[2] = $row["src"];
-        $user_data[3] = "admin";
+        $user_data[3] = "member";
         $user_data[4] = $row["date"];
       }
     }
@@ -29,6 +29,6 @@ if (isset($_POST["btn"])) {
     header("Location: http://localhost/eLibrary/index.php");
   } else {
     // error . redirect to login page again
-    header("Location: http://localhost/eLibrary/admin_login.php");
+    header("Location: http://localhost/eLibrary/member_login.php");
   }
 }

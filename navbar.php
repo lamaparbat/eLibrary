@@ -16,6 +16,11 @@
           $issue_type = "Issued";
           $issue_url = "issued.php";
           $display_user_issued = "none";
+        } else if (json_decode($_COOKIE["user_data"])[3] === 'member') {
+          echo "Member Panel";
+          $issue_type = "Reserved";
+          $issue_url = "reserved.php";
+          $display_user_issued = "block";
         } else {
           echo "User Panel";
           $issue_type = "Reserved";
@@ -46,11 +51,7 @@
      <img src="./img/logo.png" onclick="redirectHomepage()" />
    </div>
    <div id="leftNav">
-     <?php
-      if (json_decode($_COOKIE["user_data"])[3] === "admin") {
-      ?>
-       <i class="fa fa-plus" data-bs-toggle="tooltip" data-bs-placement="top" title="Add a new book" onclick="createBook()" draggable="false"></i>
-     <?php } ?>
+
      <img src="./img/paint.png" height="28px" width="28px" data-bs-toggle="tooltip" data-bs-placement="top" title="Change BG color" aria-hidden="true" onclick="changeBackground()" draggable="false"></i>
      <img id="avatar" src="./backend/uploads/<?php echo json_decode($_COOKIE["user_data"])[2]; ?>" height="100%" width="100%" onclick="showProfile_nav()" draggable="false" />
    </div>
@@ -60,3 +61,9 @@
      location.assign("http://localhost/elibrary/")
    }
  </script>
+
+
+
+  <!-- if (json_decode($_COOKIE["user_data"])[3] === "admin") {
+
+   <i class="fa fa-plus" data-bs-toggle="tooltip" data-bs-placement="top" title="Add a new book" onclick="createBook()" draggable="false"></i> -->

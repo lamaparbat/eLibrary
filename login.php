@@ -30,8 +30,6 @@
     <center>
      <input type="submit" name="btn" value="Login" id="login_btn" /><br /><br />
      <a href="http://localhost/elibrary/createAccount.php">New to the site ?</a>
-     &nbsp;&nbsp;&nbsp;
-     <a href="http://localhost/elibrary/forgetPassword.php">Forget password ?</a>
     </center>
    </form>
   </div>

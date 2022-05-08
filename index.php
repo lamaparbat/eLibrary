@@ -44,12 +44,12 @@
  <script>
   //open create book popup model
   document.querySelector(".profile_nav").style.display = "none";
-  document.querySelector(".createCourse").style.display === "none"
+  document.querySelector(".createCourse").style.display = "none";
   document.querySelector(".createCourse").style.background = "red !important";
   document.querySelector(".main").style.display = "flex";
   document.querySelector("#title").style.display = "flex";
 
-
+  //open the create book
   function createBook() {
    if (document.querySelector(".createCourse").style.display === "none") {
     document.querySelector(".main").style.display = "none";
@@ -59,8 +59,6 @@
     document.querySelector(".createCourse").style.display = "none";
    }
   }
-
-  //track the issued book date
  </script>
 </body>
 

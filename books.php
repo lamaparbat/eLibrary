@@ -114,6 +114,9 @@
   })
 
   //edit the card details
+  document.querySelector(".members").style.display = "flex";
+  document.querySelector(".createCourse").style.display = "none";
+
   function edit(id, event) {
     const cardObj = event.currentTarget.parentElement.parentElement
     const cardDesc = event.currentTarget.parentElement.parentElement.children[2]
@@ -123,19 +126,12 @@
     const category = cardDesc.children[2].children[0].innerText
     const published = cardDesc.children[3].children[0].innerText
 
-    // change the btn value to update
-    $(".members .sidebar form").children().toArray()[11].value = "Update";
-    $(".members .sidebar").children().toArray()[2].action = "./backend/updateBooks.php";
-
-    //loading the field value to the sidebar form
-    $(".members .sidebar form #data_id").val(cardObj.id)
-    $(".members .sidebar form div").children().toArray()[1].value = title
-    $(".members .sidebar form div").children().toArray()[4].value = author
-    $(".members .sidebar form div #book_img").attr("src", src)
-
-    // hide window based on width size
-    if (window.innerWidth < 1090) {
-      hideSidebar()
+    if (document.querySelector(".createCourse").style.display === "none") {
+      document.querySelector(".main").style.display = "none";
+      document.querySelector(".createCourse").style.display = "flex";
+    } else {
+      document.querySelector(".main").style.display = "flex";
+      document.querySelector(".createCourse").style.display = "none";
     }
   }
 

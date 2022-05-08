@@ -31,13 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
        <span class="mx-3">Phone: <font id="value">' . $phone . '</font></span>
       </div>
       <div class="d-flex justify-content-around footer">
-       <div 
-         id="card_id' . $id . '" 
-         class="edit_cont px-2 d-' . $display . '"
-          onclick="edit(' . $id . ', event)" >
-          <i class="fa fa-pencil" aria-hidden="true"></i> Edit
-       </div>
-       <div class="edit_cont px-2 d-' . $display . '" onclick="Delete(' . $id . ')">
+
+       <div class="edit_cont px-2 bg-danger text-light w-75 d-' . $display . ' text-center py-1" onclick="Delete(' . $id . ')">
            <i class="fa fa-trash" aria-hidden="true"></i> Delete
        </div>
        <div
@@ -53,3 +48,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     ';
  }
 }
+
+
+      //  <div 
+      //    id="card_id' . $id . '" 
+      //    class="edit_cont px-2 d-' . $display . '"
+      //     onclick="edit(' . $id . ', event)" >
+      //     <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+      //  </div>

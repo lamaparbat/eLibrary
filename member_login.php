@@ -7,7 +7,7 @@
  <link rel="icon" href="../eLibrary/img/title_logo.png" type="image/x-icon">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="./css/login.css">
- <title>eLibrary / Login </title>
+ <title>eLibrary / Member Login </title>
 </head>
 
 <body>
@@ -17,8 +17,8 @@
  <div class="container">
   <!-- form container -->
   <div class="form_container">
-   <h3>Admin Login Form</h3><br />
-   <form action="./backend/admin_login.php" method="post">
+   <h3>Member Login Form</h3><br />
+   <form action="./backend/member_login.php" method="post">
     <div class="email_cont">
      <i class="fa fa-envelope-o"></i>
      <input type="email" name="email" class="form-control" placeholder="Enter email or phone number" required>
