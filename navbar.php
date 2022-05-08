@@ -6,7 +6,7 @@
 
  <div id="mySidenav" class="sidenav">
    <div id="avatar" class="mt-4 mb-2">
-     <img src="./img/avatar.png" height="100%" width="100%" onclick="redirectHomepage()" />
+     <img src="./backend/uploads/<?php echo json_decode($_COOKIE["user_data"])[2]; ?>" height="100%" width="100%" onclick="redirectHomepage()" />
    </div>
    <center>
      <span>
@@ -51,8 +51,12 @@
      <img src="./img/logo.png" onclick="redirectHomepage()" />
    </div>
    <div id="leftNav">
-
-     <img src="./img/paint.png" height="28px" width="28px" data-bs-toggle="tooltip" data-bs-placement="top" title="Change BG color" aria-hidden="true" onclick="changeBackground()" draggable="false"></i>
+     <?php
+      if (json_decode($_COOKIE["user_data"])[3] === "admin") {
+      ?>
+       <i class="fa fa-plus" data-bs-toggle="tooltip" data-bs-placement="top" title="Add a new book" onclick="createBook()" draggable="false"></i>
+     <?php } ?>
+     <!-- <img src="./img/paint.png" height="28px" width="28px" data-bs-toggle="tooltip" data-bs-placement="top" title="Change BG color" aria-hidden="true" onclick="changeBackground()" draggable="false"></i> -->
      <img id="avatar" src="./backend/uploads/<?php echo json_decode($_COOKIE["user_data"])[2]; ?>" height="100%" width="100%" onclick="showProfile_nav()" draggable="false" />
    </div>
  </div>
@@ -64,6 +68,6 @@
 
 
 
-  <!-- if (json_decode($_COOKIE["user_data"])[3] === "admin") {
+ <!-- if (json_decode($_COOKIE["user_data"])[3] === "admin") {
 
    <i class="fa fa-plus" data-bs-toggle="tooltip" data-bs-placement="top" title="Add a new book" onclick="createBook()" draggable="false"></i> -->

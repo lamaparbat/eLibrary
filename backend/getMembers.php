@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $id = $row["id"];
   $name = $row["name"];
   $email = $row["email"];
+  $password =  $row["password"];
   $phone = $row["phone"];
   $src = 'backend/uploads/'.$row["profile"];
 
@@ -49,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
           <i class="fa fa-info-circle" aria-hidden="true"></i> Details
        </div>
       </div>
+      <span class="d-none" id="user_password">'.$password.'</span>
      </div>
     ';
  }

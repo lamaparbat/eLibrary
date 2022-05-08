@@ -54,7 +54,7 @@
               <div class="icon_cont px-3 py-1 bg-light">
                 <i class="fa fa-eye" aria-hidden="true" id="emailIcon"></i>
               </div>
-              <input type="text" class="form-control shadow-0 rounded-0 email" placeholder="" name="password" id="uname" />
+              <input type="text" class="form-control shadow-0 rounded-0 email" placeholder="" name="password" id="password" />
             </div>
             <span>Enter Phone number</span>
             <div class="d-flex mt-2 mb-4">
@@ -167,10 +167,11 @@
     const title = cardDesc.children[0].children[0].innerText
     const email = cardDesc.children[1].children[0].innerText
     const phone = cardObj.children[2].children[2].children[0].innerText
+    const password = cardObj.children[4].innerText;
 
     // change the btn value to update
     document.querySelector(".members .sidebar form")[6].value = "Update";
-    $(".members .sidebar").children().toArray()[2].action = "./backend/updateBooks.php";
+    $(".members .sidebar").children().toArray()[2].action = "./backend/updateMembers.php";
 
     //loading the field value to the sidebar form
     $(".members .sidebar form #data_id").val(cardObj.id)
@@ -178,6 +179,7 @@
     $(".members .sidebar form div").children().toArray()[4].value = email
     $(".members .sidebar form div #img").attr("src", src)
     $(".members .sidebar form div .phoneNum").val(phone)
+    $(".members .sidebar form div #password").val(password)
 
     // hide window based on width size
     if (window.innerWidth < 1090) {

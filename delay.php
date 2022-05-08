@@ -83,6 +83,17 @@
           }
         })
       }
+
+      // hide the sidebar form 
+      function hideSidebar() {
+        if ($(".members .sidebar").css("display") == "none") {
+          $(".members .rows .data").css("width", "70%")
+          $(".members .sidebar").css("display", "block")
+        } else {
+          $(".members .rows .data").css("width", "100%")
+          $(".members .sidebar").css("display", "none")
+        }
+      }
     </script>
 </body>
 

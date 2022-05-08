@@ -7,7 +7,19 @@ $last_date = "";
 
 $total_book_count = $total_issued_book_count = $total_reserved_book_count = $total_returned_book_count = 0;
 
-//get the total books count
+//select query by desc order
+$query = "SELECT * FROM books ORDER BY date ASC";
+
+//get the last created book
+$result = mysqli_query($con, $query);
+while($row = mysqli_fetch_assoc($result)){
+  $start_date = $row["date"];
+  $arr = explode("-",$start_date);
+  $start_date = $arr[0];
+  break;
+}
+
+//select query by desc order
 $query = "SELECT * FROM books";
 $total_book_count = mysqli_num_rows(mysqli_query($con, $query)) or die(mysqli_error($con));
 
@@ -132,7 +144,7 @@ if (json_decode($_COOKIE["user_data"])[3] === "admin" || json_decode($_COOKIE["u
     <div class="body pt-3">
       <span><?php echo $total_book_count; ?></span><br />
       <h6>Total Books available</h6>
-      <p>From <?php echo "20" . $cur_date[0] . $cur_date[1]; ?>- <?php echo $last_date; ?></p>
+      <p>From <?php echo $start_date; ?> - <?php echo "20" . $cur_date[0] . $cur_date[1]; ?></p>
     </div>
     <div class="footer d-flex justify-content-end">
       <div>

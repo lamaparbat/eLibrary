@@ -22,7 +22,7 @@ if(isset($_POST["btn"])){
     $user_data[4] = $row["date"];
    }
   }
-    //save the cookies on browser
+    //save the cookies
     setcookie("user_data",json_encode($user_data), time()+(86400 * 30),"/");
     
     // successfully redirect to hompage
