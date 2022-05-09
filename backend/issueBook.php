@@ -4,6 +4,8 @@ include 'connection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $book_id = $_POST["book_id"];
   $user_email = $_POST["user_email"];
+  $user_type = $_POST["user_type"];
+  echo $user_type;
 
   //get the current date & convert the date into array , ["year","month","day"]
   $issue_date = explode("/", date("Y/m/d"));
@@ -12,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $deadline = $issue_date[0] . "/" . ($issue_date[1] + 1) . "/" . $issue_date[2];
   $issue_date = $issue_date[0] . "/" . $issue_date[1] . "/" . $issue_date[2];
  
-  if(json_decode($_COOKIE["user_data"])[3] === "user"){
+  if($user_type == "user"){
      $query = "SELECT * FROM user WHERE email='$user_email'";
   }else{
     $query = "SELECT * FROM members WHERE email='$user_email'";
