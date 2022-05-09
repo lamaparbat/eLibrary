@@ -54,7 +54,7 @@
             <span>Select user type</span>
             <select class="form-control mb-2" name="user_type">
               <option value="user">User</option>
-              <option value="user">Member</option>
+              <option value="member">Member</option>
             </select>
 
             <input type="submit" name="submit" value="Issue Book" class="btn btn-primary mt-1 px-5 rounded-0" onclick="updateComplete()" required />
