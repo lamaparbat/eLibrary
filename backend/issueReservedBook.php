@@ -3,6 +3,7 @@ include 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $book_id = $_POST["book_id"];
+  $book_name = $_POST["bookname"];
   $user_email = $_POST["user_email"];
   $src = $_POST["src"];
   $issue_date = explode("/", date("Y/m/d"));

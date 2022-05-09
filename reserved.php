@@ -63,18 +63,23 @@
       })
     }
 
-    function issuedBook(user_email, bookid, src) {
+    async function issuedBook(user_email, bookname, bookid, src, id) {
       const userEmail = user_email;
       const bookId = bookid;
-      const img_src = src;
+      if (src.includes("/")) {
+        var img_src = src.split("/")[2];
+      } else {
+        var img_src = src;
+      }
 
       $.ajax({
         type: "POST",
         url: "./backend/issueReservedBook.php",
         data: {
           book_id: bookId,
+          bookname: bookname,
           user_email: userEmail,
-          src:img_src
+          src: img_src
         },
         success: function(data) {
           alert("successfully book issued")

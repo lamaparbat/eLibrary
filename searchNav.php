@@ -21,7 +21,7 @@
 <!-- custom js script -->
 <script>
  $("#searchbar").on("keyup", (e) => {
-  //get the endpoints
+  //get the current page id
   let endpoint = window.location.href.split("/")[4]
 
   //sending keyword to backend for live searching
@@ -30,6 +30,7 @@
     url: "./backend/memberSearch.php",
     type: "POST",
     data: {
+     //e.target.value  -> represent pressed keyword
      data: e.target.value
     },
     success: function(data) {

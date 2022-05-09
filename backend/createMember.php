@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  $email = $_POST["email"];
  $password = $_POST["password"];
  $phone = $_POST["phone"];
- $file_name = $_FILES["profile"]["name"];
+ $file_name = $_FILES["profile"]["name"]."_".uniqid();
  $temp_name = $_FILES["profile"]["tmp_name"];
 
  //get the current date
