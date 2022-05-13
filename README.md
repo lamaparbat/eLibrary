@@ -24,4 +24,7 @@ Backend Programming used: PHP and SQL.
 Database: MySQL
 API Handling: Ajax (Jquery).
 
+Security Features
+- Password encryption
+
 
