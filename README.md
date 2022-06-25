@@ -28,3 +28,18 @@ Security Features
 - Password encryption
 
 
+
+
+# Documentation
+1. Install and Setup Xampp server and Mysql databse on your machine.
+2. Clone this project and you will get the zip file
+3. Extract the zip file
+4. Open the xampp server and run all the services like mysql, apache web server by clicking on start button
+5. Open the phpmyadmin on the browser : http://localhost/phpmyadmin/
+6. Create a new database name ->   elibrary
+7. Then click on the import tab on the top navbar 
+8. Click on the "choose a file" button and select the elibrary.sql file from the project folder
+9. Click on import button 
+10. Then cut and paste your project folder inside htdocs folder of xampp folder i.e  xammp/htdocs/
+11. Finally, type http://localhost/elibrary/ on your browser tab and enjoy the site.
+
