@@ -8,6 +8,8 @@ System features (UI & Functionality)
 - Fixed Navbar
 - Flexible sidebar with sever navigation button
 - Automatically charge the user if return exceed than deadline
+- User center design 
+- Password encryption
 
 User Features
 - User can register the new account including username, email, password and profile.
