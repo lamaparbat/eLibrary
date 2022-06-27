@@ -45,3 +45,22 @@ Security Features
 10. Then cut and paste your project folder inside htdocs folder of xampp folder i.e  xammp/htdocs/
 11. Finally, type http://localhost/elibrary/ on your browser tab and enjoy the site.
 
+
+
+## Features
+
+
+
+## Bugs
+
+
+## Improvements
+
+
+## Contributions
+
+
+## Collaborators
+
+
+
