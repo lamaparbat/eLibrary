@@ -48,11 +48,16 @@ Security Features
 
 
 ## Features
-
+1. BOOKS CRUD
+2. USERS CRUD
+3. User centered Design
+4. Locus of control
 
 
 ## Bugs
-
+1. Content alignement
+2. Design principle
+3. Reverse of action
 
 ## Improvements
 
