@@ -59,14 +59,9 @@ Security Features
 2. Design principle
 3. Reverse of action
 
-## Improvements
 
-
-## Contributions
-
-
-## Collaborators
-
+# If you have any problems, feel free to ask me. Find my contacts on this portfolio[https://parbat-5db79.web.app/]
+# And if you like my project, do press the follow button. Thank You !! 
 
 
 ## Author:  Parbat Lama
